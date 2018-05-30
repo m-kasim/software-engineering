@@ -1,0 +1,73 @@
+Virtualization
+
+1. What is virtualization?
+- [virtualization]: Various techniques, methods or approaches of creating a virtual version of something
+- hardware/machine virtualization
+- OS level/application virtualization
+- [Emulation]: Slow process
+
+2. Hardware virtualization
+- Creation of a virtual machine that acts like a real computer with its own operating system and applications
+- [hypervisor], [VMM (virtual machine manager)]: The software which creates and manages the virtual machine
+- [Host OS]: The OS which provides the virtualization software
+- [Guest OS]: The "virtual" software
+- Virtualization can be done also by a hardware!
+
+3. Virtual Desktop Infrastructure:
+- An OS which is somewhere in the cloud, but not in the local computer
+- Virtualization is a very competitive market in computing with a lot of vendors
+
+4. Full virtualization:
+- Almost complete simulation of the actual hardware to allow software to run unmodified
+- The guest OS is not aware it is being virtualized. It requires no modification
+- The VM has all hardware components: CPU, HDD, Network card - but they are virtual!!!
+- The game emulators (for NES, Play Station) are actually virtual machines!
+- It works with [Ring 0]
+
+5. Paravirtualization:
+- The guest OS needs to be modified: it talks with "special instructions" to the hypervisor
+- All privileged instructions are replaced with calls to the [hypervisor]
+- The guest OS is AWARE that it is being virtualized by a [hypervisor]
+- The guest OS does not communicate DIRECTLY with the hardware, but with the [hypervisor]
+- It is less effective than [full virtualization]
+- Microsoft: In order to support Windows on top of Linux, Microsoft has commited about 15 000 lines of code to the Linux kernel,
+  making it one of the biggest contributors to the development of Linux kernel
+- [Ring -1]: Actually, the guest OS communicates with [Ring -1] and the hypervisor is on this layer
+
+6. KVM virtualization:
+- An extra module is added to the kernel
+- It actually turns the Linux kernel into a hypervisor
+- Memory manager, Scheduler, and others are modified in the process
+- KVM is disabled in BIOS by default, because a virus can act as a hypervisor to the OS
+
+7. 4 protection levels:
+- [Ring -1]: Virtualiazation support of the newer CPUs
+- [Ring 0]: OS Kernel
+- [Ring 3]: Applications - virtual address space
+- If an application wants to communicate with a kernel module, it needs to call a special API
+- Intel/AMD processors support hardware virtualization (Intel VD)
+- Hardware assisted virtualization helps to have a guest OS without instructions emulation and translation (they simply extended the)
+
+8. Application level virtualization:
+- The application is separated from the other apps
+- [Chroot]: changes the root directory ["/"] for an application with a new one
+  - Thus you cannot see outside the current root directory
+
+9. Namespace isolation:
+- Copying one program from one PC to another (by copying the Heap and the Stack to another machine)
+- Isolation of namespace by copying:
+  - Network
+  - CPU
+  - PDI
+  - Memory
+  - Timezone
+  - I/O
+
+10. Example of full virtualization techniques:
+- VMWare ESXi
+- Hyper-V
+- KVM
+- XEN - Supports full and paravirtualization
+- Paravirtualization
+- OS-level / application
+- [live migration]: moving the OS image from one hardware host to another
