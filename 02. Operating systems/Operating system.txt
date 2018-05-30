@@ -1,0 +1,165 @@
+02. Operating systems
+
+OS architecture - Part 1:
+
+1. Operating system:
+- Manages hardware resources
+- Provides common services for the application developers
+- Acts as an intermediary between the user and the system
+- All remote devices have their contorllers
+
+02. OS types:
+- [non-interrupted execution] - can be interrupted by the hardware (newer)
+- [interrupted execution] - can be interrupted by the hardware
+
+03. Interrupts:
+- In operating systems, [interrupt] is the key event for which an operating system waits for (state change)
+- when an interrupt happens, the CPU goes to a certain location
+- Operating systems without [interrupt] are not able to stop the execution of a current process
+- Example for interrupt: You are talking with a friend and someone calls you on the phone
+
+04. OS loops:
+- In general, the way an OS works can be represented as a loop
+- This loop is executed, until an [interrupt] event is not caught
+- There are functions which are non-interruptable (critical time-sensitive functions) - they raise a flag on the CPU
+
+5. Kernel architecture:
+- [ Kernel space ] - reserved only for the OS and the hardware (Device Drivers, Dispatcher, File System,)
+- [ User space   ] - can be used by the user (browsers, programs, etc)
+- It's very rare for one program inside the [kernel space] to affect another inside it
+
+6. CPU execution modes:
+- [CPU privileged     mode]: Can access all memory
+- [CPU non-privileged mode]: Cannot access all memory
+
+7. OS kernel architectures:
+
+  7.1. [Monolithic kernels]:
+  - Windows, Linux - everything is in the same place
+  - Big kernel space ( Device Drivers, Dispatcher, File System, IPC (Inter-process communication) )
+
+  7.2. [Micro kernels]:
+  - There is a main layer which talks with the CPU and memory, and another layer which implements communications
+  - Everything else like drivers and file systems is in the user space
+  - This type of kernels does not work in privileged mode
+  - It works in [non-privileged mode]
+  - All "system modules" can be modified or stopped
+  - They are harder to debug, since all system modules talk to each other interactively
+  - Due to the different modules, it is recommended to update the micro kernels all-together (not only seperate packages)
+
+  7.3. [Hybrid kernels]: Supports direct link from [user space] to [kernel space]
+  - Some modules are inside the kernel: Application ICP, Device Driver, Virtual Memory, Scheduling
+  - Other modules are outside the kernel: File server, UNIX server
+
+8. Kernel software:
+- CPU handling         - Determines the CPU (software is CPU specific, because instructions are CPU specific)
+- Memory manager       - CPUs have cache in them, because CPU speed is about ~25x faster than motherboard speed
+- Interrupt handler    - Practically, the implementation in the hardware is Stack. It also has interrupt priorities. Desired and Required interrupts
+- Device drivers       - For periphery devices (they must be loaded in the kernel)
+- File systems         - How to write in the disk storage with a certain ordering (file system)
+- Network              - Protocols
+- CPU scheduler        - Order of the programs to be executed
+- I/O scheduler        - Manages writing to storage devices
+- Network scheduler    - Manages the quality of service in networks
+- Security mechanisms
+
+9. Multi-platform:
+- OS can support different CPU architectures
+- The linux kernel has been compiled with support for various architecturs: Supports currently 27 architectures
+- Windows kernel: Compiled on C#
+
+
+10. Memory manager:
+- Cares for physical memory allocation
+- [data locality]: Each CPU core asks for memory from a specific memory slot
+- Memory managers assign the memory to the current memory slot with which the CPU works
+- It also tells to the CPU scheduler where the memory is located
+- [Physical Address Extension]: Allowing 32-bit systems to have more than 4GB RAM. A single program is limited to 4GB
+- Linux memory manager: In general, still working a little bit crappily because it's difficult to make it work well for all situations
+  SLAB - queues, sssigns [stacks] per CPU
+  SLUB - good for parallel queues, there is no need for synchronization - Default in Linux
+  SLOB - good for fragmentation                                         - Used for embedded systems
+- In many applications, the main problem is the synchronization
+- [memory compaction]: Prevents duplicate memory regions to exist in different memory slots, thus saving memory
+- [memory balooning]: Transferring free RAM between CPU. Free ram of local machines is transferred to the host memory room.
+                      Might result to [memory overcommit]
+- [huge pages]: Memory is assigned to minimum size blocks. Example: Take always 16MB RAM on each cycle
+
+11. Interrupt manager:
+- It's a simple dispatcher of events
+- A lot of interrupts slow down the CPU
+- It tries to predict similar interrupts in order to optimize CPU
+
+12. Device drivers:
+- They're specific for specific hardwares
+
+13. VFS - Virtual File System:
+- [Virtual File System] layer: translator for different file systems
+- "One ring to rule them all" system layer for all file systems
+- File systems: ext2, ext3, ext4, xfs, NTFS, FAT16, FAT32
+- [Volatile cache]: Cache in VFS for the RAM which is not used, for often used files
+
+14. Network:
+- Media: Network devices are imaginary devices in the [user space]: I/O controls - Bridges, VLANS, Tunnels, Firewalls
+- Protocols: Ethernet, Wifi, WiMax, GPRS/HSDPA, Amateur Radio
+
+- Protocols for Internet
+ - ARP:  Physical address based communication
+ - IP:   IP-based communication
+ - ICMP: Ping
+ - UDP:  No response
+ - TCP:  Response
+ - HTTP: Web pages
+
+- There are UNIX specific protocols
+
+15. Type of operating systems:
+- Single / Multi-platform   (does it work with different CPUs)
+- Single / Multi-processing (does it work with one or multiple CPUs)
+- Single / Multi-tasking    (Can the OS switch between multiple programs)
+- Cooperative multitasking  (Only one program can run at a time, other programs cannot run.
+                            (In cooperative form, the program does not report to the kernel it has finished,
+                             so it can result in endless loops blocking. Nothing can interrupt it)
+
+- Preemptive                (The program has a limited timer to run, before being interrupted)
+
+- Single / Multi-threading (OS can launch multiple threads in a single program)
+  - [program]:
+    - a program is defined by the amount of [memory] it uses and the order of the [operations] needed for it to run
+    - the [operations] can be launched parallely in different [threads]
+    - in Linux, 1 thread = 1 process
+
+- Single / Multi-user      (Single user = DOS)
+  - users cannot access other user's memory area
+
+- Realtime (RTOS):
+  - The OS guarantees that an answer will be provided in X miliseconds
+  - operating system that has been developed for real-time applications and typically used for embedded applications on a
+    special-purpose computer with a limited set of functions determined by the hardware design.
+
+16. Thread scheduling
+  16.1. Windows:
+  - Windows has 32 priorities, which are grouped in [stacks]
+  - Windows can change thread priorities
+
+  16.2. Linux Thread Scheduler:
+  - Completely Fair Scheduler (CFS)
+  - Niceness: Priority levels in Linux
+  - Linux has 100 priorities
+  - Linux has "Nice level" lists in each CPU core
+  - Each PID has X amount of TICKS in this "Nicness" lists
+  - CPU goes over all the nice list and executes them
+
+17. I/O Scheduling:
+- Linux I/O schedulers:
+  - CFQ (Completely Fair Queuing): per process queues and then allocates time slices for each of the queues to access the disk
+  - Anticipatory: Anticipates synchronous read, good for video streaming. This is good for continous files (videos). It "expects" and prefetches the next blocks of data in the RAM
+  - Deadline: Imposes a deadline on all I/O operations, in order to prevent starvation of requests
+  - Noop: Simple FIFO queue, implements request merging
+- There are different schedules, because there are different disks (HDD, SDD)
+
+18. Network schedling:
+- Windows: Only 1 scheduler
+- INGRESS: Filter incoming packets (like, allow 10%, 20% of the packets)
+- EGRESS:  Filter output packets
+- Linux supports 23 shaping methods in the kernel

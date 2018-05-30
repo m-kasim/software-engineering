@@ -1,0 +1,183 @@
+1. CPU
+- CPU is made of transistors
+- [transistor]: a semiconductor device with three connections, capable of amplification in addition to rectification.
+- [transistors]: they navigate the electric signals
+- CPUs have clocks which measure how much time has passed for one operation
+- CPUs handle interrupt requests: Desired and required interrupts (the required ones are executed instantly on the next cycle)
+2. Architectures:
+- Many archictecturs
+
+3. RISC: Reduced Instruction Set Computing:
+-- MIPS, SPARC, Alpha, ARM, AVR, PowerPC, PA-RISC
+- Embedded devices
+- Older devices
+- Has smaller instruction sets
+- Complex architectures are combinations of simple instructions
+- Better for simpler tasks and paralelization requiring tasks (Example: Video encoding. Encoding: Compression of frames)
+- Harder for abstraction while programming code for the CPU
+- [instructions] - they have less [multiple operand instruction sets]
+- [multiple operands]: the OS emulates them
+
+4. CISC: Complex Instruction Set Computing:
+- Architectures: x86, x86-64, VAX, m68k, System /360/370/Z
+- More instructions which can do more complex jobs
+- Threading: The CPU is divided to many small logical parts
+- Thus many parallel requests can be executed
+- Processor abstraction
+
+5. CPU instruction set:
+- LOAD
+- STORE
+- ADD
+- MOVE
+- PUSH
+- POP
+
+6. Registers
+- [register]: a memory type to which the CPU has access to
+- What the CPU should do with the data from [register 01], [register 02] and so?
+
+7. Instruction sets:
+- Single operand   instruction sets - only 1 parameter
+- Multiple operand instruction sets - 2 parameters
+
+8. CPU Endianess
+- 149 in binary:   1001 01 01
+- [Big endian]:    03   E8 - most significant bit is last - SPARC, PowerPC
+- [Little endian]: E8   03 - most significant bit is first - Intel x84
+- ARM processors can work both with [Big endian] and [Little endian]
+- Java and C# encode their packets in reverse to each other
+- CPU programs can be compiled for one or another type of CPU
+- [Microcode]: Software which is loaded directly to the CPU. Processor microcode is akin to processor firmware. There are some viruses which are saved to the microcode
+
+9. CPU Cache:
+- CPUs have caches so they can temporarily store information in order to execute more commands
+- Because the computers need to store the result somewhere, because the RAM is very away
+- Instead the result is stored in a Cache
+- L1 - closest to CPU, has the largest memory
+- L2 - memory for threads
+- It's important that the programs can fill up the cache
+- CPU and RAM are connected via [north bridge]: the fastest speed in the motherboard
+- CPU threats and OS threads are different!
+
+10. Threads:
+- [thread]: Can execute/"compute" set of instructions
+- Standard CPUs of Intel have 1 or 2 threads per Core
+- [multithreading]: running multiple threads
+- [hyperthreading]: The CPU caches get filled up and emptied in each cycle. When the cache is emptied, it is empty for 1 cycle.
+  Hyperthreading adds additional clock to the CPU, which tracks when a [cache] will be emptied, so it is filled in the same time with data from another cache
+
+
+11. 32/64 bits:
+- a 32-bit register can store 2^32 different values - 0-4 294 967 295 integers
+- a 64-bit register can store 2^64 different values
+- It also determines the actual memory addresses that can be assigned by one 1 CPU thread
+- 64-bit OSes are slower, because it takes more time to fill up a single larger register by the CPU, instead of 2 smaller ones, provided
+  that the experiment is done with equal compute speed.
+- However, 64-bit CPUs allow larger memory sizes to be added (more GBs)
+- Physical address extension
+
+12. Memory
+- Volatile memory: DRAM, SRAM - when the electricity stops, the memory is not being saved. It's very fast
+- Non-volatile memory: NVRAM, FLASH, ROM (memory which cannot be deleted)
+- System memory
+
+13. Northbridge:
+- Connects directly the CPU, Memory and PCI-E devices. Very fast
+- Nowadays, the Northbridge and the CPU are integrated
+
+
+14. Southbridge:
+- Connects the Northbridge with other slower devices. Slower
+- Communicates with the remote devices
+
+15. BIOS:
+- Initializes all chips on the motherboard, because all of them require signals so, they are usable
+- Finds all attached devices on the motherboard
+- Then it gives a list of the devices to the OS, so the OS can load drivers for these devices
+- The BIOS OS also searches for an OS and loads it to memory
+
+16. Storage:
+- Hard disks are the main bottleneck in contemporary compiters
+- [controller]:
+- [device]:
+- The OS never writes to the hard disk.
+- All OS, actually provide instructions to the [controller], so the [contorller] writes to the DISK
+
+- PATA/IDE - Interface standard master and slave - PARALEL
+- SCSI - Originally for corporate clients - SERIAL
+       - limited by lenght between devices
+       - more devices
+- Serial ATA - 1 hard disk per cable
+             - serialization in the controller
+
+17. Hard disk:
+- in the 1980s, 10MB HDD costed about 3000 USD
+- [seek time]: the slowest operation of the HDD
+- When the HDD is shaken, the seeker can scratch the disk, and this is how a bad sector is formed
+- Most new HDDs have plastic "resting cases" so the seeker can rest in them while not reading data from the disk
+- Most new HDDs have also a movement sensor (accelerometer) in them, so they detect these outside movements, so the [head] is
+  automatically stopped
+- It's hard to predict when a HDD will get damaged
+
+18. SSD:
+- They are actually non-volative FLASH chips
+- Flash chips have a limited amount of read/writes to be done to each address
+- SSD disks have actually a larger size, for using backup size for copying bad sectors
+- The main difference is, there is no seek time in the disk
+- the problem is, most current software is optimized for HDD seeking heads and not SSDs
+- [log-structured filesystem]: is a file system in which data and metadata are written sequentially to a circular buffer, called a log
+  - files are scattered everywhere not in any order on the disk
+
+19. Serial devices:
+- They have less pins, data is being serialized
+- [paralel] transfer is slower than [serial] transfer due to problems of synchronization with the different transfer channels
+
+20. Paralel ports:
+- They have more pins, for parallel transfer
+
+21. GP I/O: General Purpose Input/Output:
+- General-purpose input/output (GPIO) is a generic pin on an integrated circuit or computer board whose behavior—including
+  whether it is an input or output pin—is controllable by the user at run time
+
+
+22. I2C:
+- I^2 synchronous, multi-master, multi-slave, packet switched, single-ended, serial computer bus invented in 1982 by Philip
+- Used for low-level devices communication like termometers, sensors and etc.
+
+23. System on chip:
+- Primarily in mobile devices
+- Inside the CPU are the cores, the memory, storage controllers, the flash storage, USB controllers
+- Such chips have multiple supported usages (HDMI, WiFI, etc) and be directly attached to a board
+
+24. Network:
+- Layer 1: Cables, Repeater (for dinstances 300+ m), HUB, Transceiver (Converts one signal type to another: optics/electrics)
+- Data is being transffered as eletric signal and signal is being copied
+- Initially, all vendors made their own protocols
+
+- Layer 2: Data is being copied only for the devices which need it (Physical addresses)
+- Devices: Bridges, Switches
+
+- Layer 3: IP-address based routing
+
+Calbes: UTP (Unshielded Twisted Pair)
+- 8 wire cables
+- Can 4 be used only for transfer
+
+Wiring standards for UTP cables:
+- STRAIGHT-THRU 568A
+- STRAIGHT-THRU 568B
+- CROSSOVER
+
+- The twisting is done in order to prevent magnetic problems or signal reduction in longer dinstances
+- In cables less than 1 meter the electrical signal bounches back and returns to the signal emitter. Then it actually adds noise to the next signal
+
+
+
+
+
+
+
+
+
+-

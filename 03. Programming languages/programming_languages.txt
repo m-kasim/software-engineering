@@ -1,0 +1,26 @@
+03. Programming languages
+
+01. Machine level languages:
+MACHINE LANGUAGES: Imagine them as the “native tongue” of the computer, the language closest to the hardware itself.
+Each unique computer has a unique machine language.
+A machine language program is made up of a series of binary patterns (e.g., 01011100) which
+represent simple operations that can be accomplished by the computer (e.g., add two operands, move data to a memory location).
+Machine language programs are executable, meaning that they can be run directly.
+Programming in machine language requires memorization of the binary codes and can be difficult for the human programmer.
+
+02. Assembler languages:
+ASSEMBLY LANGUAGES: They represent an effort to make programming easier for the human.
+The machine language instructions are replaced with simple pneumonic abbreviations (e.g., ADD, MOV).
+Thus assembly languages are unique to a specific computer (machine).
+Prior to execution, an assembly language program requires translation to machine language.
+This translation is accomplished by a computer program known as an Assembler.
+Assemblers are written for each unique machine language.
+
+03. High-level languages:
+HIGH LEVEL LANGUAGES: High-level languages, like C,C++, JAVA etc., are more English-like and, therefore,
+make it easier for programmers to “think” in the programming language. 
+High-level languages also require translation to machine language before execution.
+This translation is accomplished by either a compiler or an interpreter.
+Compilers translate the entire source code program before execution.(Eg: C++, Java)
+Interpreters translate source code programs one line at a time.
+(Eg: Python)Interpreters are more interactive than compilers.
