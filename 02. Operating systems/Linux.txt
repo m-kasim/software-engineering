@@ -1,0 +1,80 @@
+Unix / Linux history
+
+1. History
+- 1969: Developed by AT&T and Bell Labs
+- Peter Neumann coined the name "Unics": Uniplexed Information and Computing Service
+- Written in Assembler language
+- 1973: Re-written in C
+
+Authors:
+Ken Thompson - Also created C language
+Dennis Ritchie - Also created C language
+Brian Kerninghan
+Douglas Mcllroy
+Michael Lesk
+Joe Ossannas
+
+- C language has been written in Bell Labs in order to ease their work
+
+2. Giants of UNIX:
+- 1956: Antitrust settlement forbids AT&T to enter computer business
+- 1960s: MIT, AT&T, Bell Labs, General Electric create Multics Time Sharing OS
+
+- 1980: Microsoft creates Xenix
+- 1982: System III - First commercial Linux
+- 1982: GNU Movement
+- 1983: X Window System
+- Universities start modification of the UNIX source
+- 1987: BSD - Berkeley Software Distribution
+- 1982: Sun Microsystems create SunOS from BSD
+- 1995: BSD splits to OpenBSD, FreeBSD and NetBSD
+- 2001-2003: Only SunSolaris, HP-UX, IBM AIX and SGI IRX are active
+- OpenBSD is one of the most secure distros
+- Bill Gates writes his famous letter "Open Letter to hobbyists" in which he asks them why software should not be paid for?
+
+3. Multics
+- The problem was it was only for mainframes and with very bad structure
+- Hard for extension with user programs
+
+4. Free Software:
+- 1983 - Richard Stallman announces GNU Software Project
+- 1989 - GPL license
+- 1998 - Open Source initiative
+- 1984-1990 - A lot of open source software is created
+
+5. GNU - GNU is Not Unix:
+- GNU coreutils: ls, cat, cp, mv, rm ...
+- GNU binutils: as, ld, ldconfig
+- GNU build system: automake, autoconfig, libtool
+- GNU Compiler Collection: gcc
+- GNU Debugger: gdb
+- GNU C library: glibc
+- Bash Unix Shell
+- Emacs: Text editor
+
+6. GPL - General Public License:
+- The freedom to run the program for any purpose
+- The freedom to study how the program works and to change it to do anything
+- The freedom to redistribute copies
+- The freedom to modify and release your own improved copies
+
+7. BSD license:
+- The source must retain this copyright
+- Binary must reproduce this copyright
+- All adveritising must display the message: This product includes software developed by <Organization>
+- Neither the name or the organization or contributors can be used to endorse the product without prior written authorization
+
+8. Linux:
+- 1991: Linus Torwards writes Linux as his course work: Linux 0.0.1
+- 1994: Linux 1.0
+- 1996: Tux mascot. Linux 2.0 works everywhere. The software becomes worldwide
+- Linux became popular, because it did not require you to get a BSD/Unix license from an university
+  Instead, you could just get Linux and run your programs with it and create your own distro
+- 1998: IMB, Compaq, Oracle announce their commercial Linux projects. Unix becomes a thing of the past
+- 1999: GNOME started
+- 2007: Linux Foundation
+
+9. Distribution:
+- Core + User software = Distribution
+- Linux Kernel, GNU Libraries, GNU Utilities, X window system
+- First distributions: Slackware (closest to BSD and Unix), Debian, RedHat
