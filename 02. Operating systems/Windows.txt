@@ -1,0 +1,104 @@
+Windows
+
+1. MS DOS:
+- DOS - Disk Operating System
+- It became popular mainly due to games and good user interface
+- The main OS for IBM PC
+- Single user and single process
+- Command line interface
+- It was intended for personal computers and users (small use)
+- Programmed in Assembler
+- 3D graphic problems
+- Gaming industry greatly encouraged MS-DOS
+
+2. Windows 1.0:
+- It introduced Windows with a graphical user interface
+- It was not a complete OS, but rather an "operating environment" that extends MS DOS
+- Limited multitasking
+- Tiled windows
+- IBM PC (Personal computer): The first personal computer
+- Windows used the X windows system in some way
+
+3. Windows 2.0:
+- Windows can be put on top of each other
+- 1MB
+- "Minize" and "Maximize"
+- MS Word
+
+4. Windows 3.0:
+- Windows Registry
+- Internet Explorer
+- SMB Sharing
+- Better VGA support
+- Multimedia
+- Native networking support
+
+5. OS/2:
+- Partnership between IBM and Windows
+- Microsoft decided to betray IBM and launched a negative marketing against OS/2
+
+6. Windows NT:
+- Microsoft copies features from OS/2 and developer Windows NT (New Technology)
+- 32-bits
+- Developed from scratch
+- High level language based
+- Multi-user
+- Multi-tasking
+- Features comparable to Unix
+- NTFS
+- Client and Server versions
+- Targeted for big businesses
+- It was very expensive
+
+7. Windows 95:
+- For personal computers
+- Games did not work until NT
+- Captures a massive chunk in the personal computer market
+- Single user
+- Plug'n'Play
+- Outlook Express
+
+8. Windows 2000:
+- Build on top of NT technology
+- Targeted for business clients
+- Server features:
+  - Active directory
+  - Microsoft Management Console
+  - Encrypting File Systems
+  - Dynamic Disks
+- Even more expensive than Windows 95-98!
+
+9. Windows XP:
+- Home edition
+- Professional edition
+- New GUI
+- The most popular OS
+- Remote Assistance and Remote Desktop
+- Windows Firewall
+- IEEE 802.11
+- .NET Framework 1.0
+
+10. Windows Vista:
+- New GUI and Aero style
+- .NET Framework 3.0
+- User Account Control
+- Windows Defender
+- Was very slow
+
+11. Windows 7:
+- Compatible with Windows 7 drivers and applications
+- There was a hidden virtual machine which runs older versions of Windows
+- Multi-touch
+- Performance improvements
+- Intergrated Powershell
+- XP mode
+- Many improvements over Windows 7
+
+12. Windows 8:
+- GUI change: Metro design
+- Mobile devices and tables support
+- Windows Store
+- Support for ARM processors
+- WinRT (Run Time)
+  - APIs
+  - Applications can now be coded in HTML5 and JS
