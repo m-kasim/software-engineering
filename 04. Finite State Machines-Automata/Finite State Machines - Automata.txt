@@ -1,0 +1,92 @@
+Finite State Machines (Automata) and Formal languages
+https://www.youtube.com/watch?v=7MBpk4gJRkk
+https://www.youtube.com/watch?v=njzrUYrCK0w
+
+1. Formal languages
+- [Alphabet]: a set of acceptable characters
+- [Rules]
+- [Words]
+
+2. Alphabets:
+- [alphabets] are symbolized with sigma [Σ]: a set of
+----
+\     = {0, 1}
+/___
+
+- Σ.binary = {0, 1} // for binary computers the accpetable alphabet is:
+- Σ.English = {A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z} // for English language
+
+3. Operators on Alphabet:
+- [*] operator: a set of all possible strings/words in the formal language
+- [λ] - Empty string
+- [Σ] - Alphabet
+- Σ* = { λ, a, b, aa, bb, ab, ba, aaa, bbb, aab, ... }
+       All possibles [words] of the [formal language] with the [alphabet], including the empty string
+       NOTE: It is not limited by length!
+       NOTE: It is COUNTABLY "infinite"!
+       NOTE: Order of characters in a word matters!
+
+4. Languages:
+- [Σ]  - All symbols in an alphabet
+- [Σ*] - All possible words in an alphabet
+- [L]  - Language: [All possible strings of an alphabet] (Σ*) form [Languages] (L): [L] ⊆ [Σ*]
+- [w]  - word
+- |w|  - length of the word (Absolute value)
+  |aaa|  = 3
+  |aaba| = 4
+- NOTE: |λ|     = 0 [!]
+        |λabλλ| = 2
+
+Example:
+Σ   = { a, b }
+L.1 = { ab, aab, abb, ...       }
+    = { w | [w] begins with "a" }         // Restriction: Language in which words start with "a"
+
+L.2 = { aba, aa, abab, ...      }
+    = { w | [w] has even number of "a" }  // Restriction: Even number of "a"
+
+- These are just like regular expressions
+
+5. Rules:
+- [δ] - Set of rules. Rules specify transformations
+- [S] - A specific rule
+- [F] - Accepted final states (so we know when we have reached the end)
+
+Example:
+0. Let [S] =  λ
+   Then we apply the following rules (transformations):
+1. S -> a[S]a = aa
+2. S -> b[S]b = baab
+3. S -> aa[S] = aabaab
+
+^--- These can be represented with graphs
+
+6. Language
+- Formal language definition:
+
+  L = { Σ, δ, F}
+
+- [L]: Language
+- [Σ]: Symbols of the alphabet
+- [δ]: Rules of the alphabet
+- [F]: Accepted final states
+
+7. Finite State Machines:
+- In automata theory, a finite state machine is called a deterministic finite automaton (DFA), if
+  each of its transitions is uniquely determined by its source state and input symbol, and
+  reading an input symbol is required for each state transition.
+- Non-deterministiv automata does not need obey the above rules
+
+    M = <Q, Σ, δ, q.0, F>
+
+[Q] - states
+[Σ] - alphabet
+[δ] - rules of alphabet ( Q.Σ => Q.1)
+[a] - some symbol from the alphabet
+[F] - final states ( F ⊆  Q )
+[Q.0] - start state
+
+  Example:
+  δ ( Q.1, a) => Q.2
+
+- There can be multiple final/end states
