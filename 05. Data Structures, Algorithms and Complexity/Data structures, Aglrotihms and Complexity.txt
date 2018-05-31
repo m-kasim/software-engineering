@@ -1,0 +1,199 @@
+Data structures, Algorithms and Complexity
+
+1. Data structures
+- In computer science, [data structure] is a particular way of sorting and organizing data
+  in a computer, so it can be used efficiently
+
+
+Examples:
+- Person structure (first name + last name + age)
+- Array of int: int[]
+- List of strings: List<string>
+- Queue of people: Queue<Person>
+
+2. Structure
+[0100100110010010010010010010001]                                - 32-bit int structure
+[01001001100100100100100100100010100100110010010010010010010001] - 64-bit int structure
+ ^                           ^
+ |                           |
+beginning                   [n] indexes from the beginning
+[0]
+
+- It is important to know the beginning of the [data structures], because then you calculate the offset from the beginning
+- [  structure  ]
+  [ age | socks ]
+     ^--- sub-elements of a structure
+- Accessing out of index elements of array:
+  [OTHER PROGRAM MEMORY] [ 0 | 1 | 0 | 0 | 1 | 0 | 0 | 1 ] [OTHER PROGRAM MEMORY]
+                                                  ----------^ arrays cannot "increase their size" by requesting the space of another program
+- <List>, unlike [array] can enlarge their size dynamically
+
+3. Data structure types:
+- [generic] and [user defined]
+- List ~= ArrayList ~= Vector
+
+4. Stack:
+- [stack] remembers the addresses from which functions have been called
+- [stack] also remembers the paramters of these functions
+- [stack] deinitilizases the variables in reverse order, after we are out of the scope in the program
+- [stack] variables are stored in the stck
+
+5. Heap:
+- [arrays], [objects], [strings] are stored in the heap
+- [heap] is a tree-like structure used for data allocation. It's a memory of the OS
+- [!] in C, arrays are stored in the [stack]
+      in C#, they  are stored in the [heap]
+
+6. Data structures
+- T[]: Generic type parameter: The data type is decided on compile/run-time
+
+- [LinkedList]
+  [H][0] --> [E][1] --> [L][2] --> [L][3] --> [O][4] --> end
+    ^
+    |___ Head
+- [LinkedList] does not have the limitations of an [array] with insertion or size
+- [Stack]
+- [Queue]
+- [Dictionary]: key -> value
+- [SortedDictionary(TKey, TValue)] - all keys are sorted
+- [SortedList] - all keys are sorted
+
+7. Trees:
+  Structure 1: [ int | float | pointer ]
+                                 \
+                                  \  - Address: Reference by address
+                                  \/
+  Structure 2:                  [ bool | bool]
+
+8. Pritive types:
+- int, float, decimal, char, string
+
+9. Collections:
+- array, list, stack, queue, tree, hash-table
+
+10. Abstract data types:
+- A data type, together with the operations, whose properties,  are specified independently of any particular implementation
+- They can have multiple different implementations, with different efficiency and inner logic
+
+11. Basic data structures:
+- [set]: collection of unique elements
+- [bag]: collection of non-unique elements
+- ordered sets, bags, dictionaries
+- priority queues, heaps
+- Special tree structures: [suffix tree], [interval tree], [indexed tree], [trie]
+
+12. Graphs:
+- directed, undirected
+- weighted, un-weighted
+- connected, un-connected
+
+13. Algorithms:
+- Definition: In mathematics and computer science, algorithm is step-by-step prodecure for calculations.
+              An algorithm is an effective method expressed as finite list of well-defined instructions for calculating a function.
+- Algorithm: Sequence of operations. Can include also branches (conditional blocks) and repeated logic (loops)
+- Algorithmic thinking: Ability to decompose problems into formal sequences of steps (algorithms)
+
+14. Algorithm types:
+- [imperative]: Describe the formal steps to achieve something
+- [sorting and searching]
+- [dynamic programming]
+- [graph search]: DFS and BFS
+- [combinatorial algorithms]: recursive
+- [other]: greedy, computational geometry, randomized, genetic
+
+15. Algorithm complexity:
+- Asymptotic notation
+- Predict the resources tha algorithm consumes
+  - CPU time
+  - Memory size
+  - Bandwidth
+- [Running time]: total number of primitive operations executed (machine independent steps)
+- [Algorithm complexity]:
+  Rough estimation of the number of steps performed by given computation depending on the size of the input data
+  Measured through [asymptotic notation]:
+- [asymptote]: approximation to a function
+
+- [worst case  ]: An upper bound for the running time of any input given
+- [average case]: Assume all inputs are equally likely
+- [best case   ]: The lower bound on the running time
+
+Example:
+Search in list with size [n]:
+
+[Linear complexity]:
+ [ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 ]
+
+Worse case: n   :  8 comparisons
+Average:    n/2 :  4 comparisons  <--- most often preferred
+Best case       :  1 comparison
+
+16. Asymptotic notation for algorithmic complexity:
+- Average computer power: About 100M operations per second
+
+- [polynomial] and [exponential] algorithms
+
+- O(g) - where [g] is a function of the input data size
+
+- [Linear complexity   ]: O (n) : all elements are processed once
+  Example: (2*n+3)
+  - if you add another operation, the time for execution is going to grow 2x
+
+- [Constant complexity ]: O (1) : processed only once
+  Example: 2 nested cycles until 10 => O (10^10) => O (100)
+  n=10 => 10 operations
+
+- [Quadratic complexity]: O(n^2): each of the element is processed n-times
+  Example: 2 for loops searching 2 identical numbers in 2 different arrays BUT with the same variable!
+  Example: 2 nested loop, but with different iterators => n*m
+  - If you manage to optimize it, by removing duplicate values, it becomes O(n*(n-1))
+  n=10 => 100 operations
+
+- [Cubic complexity]: 3 nested loops
+  n=10 => 1000 operations
+
+- [Logarithmic complexity]: O (log n)
+                            O (sqr n)
+  - Number of operations is proportional of log 2 (n), where n is the size of data
+  - It grows very slowly
+  Example: [binary searhc]: When you check in the middle of the numbers and are able to exclude 1/2 of the irrelevant values
+  n=100 => 10 operations
+
+- [Exponential complexity]: O (2^n)
+                            O (k^n)
+                            O (n! )
+  - Very fast growing
+  Example: [recursion]
+  n = 100 => 100 000 operations
+
+- C# applies fast optimizations in "Release" mode. It does not apply optimizations in "Debug" mode
+
+17. Compexity expresions:
+- [matrix]: An algorithm filling a matrix with size [m] x [n] will be:   O(m * n)
+- [graph]: A traverse of graph with [n] vertices and [m] edges will be:  O(m + n)
+- [memory complexity]:  linear array: O( n )
+                        2D array      O(n^2)
+18. The hidden constant:
+- For small enough iterations, some algorithms can be faster than each other
+  Example:
+  Algorithm A: 100*n - O( n )
+  Algorithm B: n*n/2 - O(n^2)
+
+  For n < 200, Algorithm B is faster!
+
+  Example:
+  [insert sort] is faster than [quick sort] for n <= 16
+
+19. Polynomial algorithms:
+- They are "fast"
+
+20. Non-polynomial algorithms (Exponential):
+- They are "slow"
+
+20. P versus NP problem:
+- in full polynomial versus nondeterministic polynomial problem, in computational complexity,
+  the question of whether all so-called NP problems are actually P problems
+
+21. NP Problem:
+- NP-complete problem, any of a class of computational problems for which no efficient solution algorithm has been found.
+- There is no algorithm to compute it in polynomial time
+- Travelling salesman problem: Travel the shortest route - there's no way to calculate it without traversing all routes

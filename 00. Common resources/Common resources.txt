@@ -1,0 +1,13 @@
+Common resources:
+
+Computer science:
+https://www.youtube.com/user/Computerphile
+
+Algorithms:
+https://visualgo.net
+
+Data structures:
+https://www.youtube.com/watch?v=shs0KM3wKv8
+
+Complexity:
+http://bigocheatsheet.com
