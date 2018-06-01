@@ -84,5 +84,16 @@ Types:
 
 8. MySQL vs NoSQL:
 - NoSQL provide more performance, SQL provide more functionality
-- NoSQL is good to use when there are big chunks of data and the relationships can be expressed in the application
+  - NoSQL is good to use when there are big chunks of data and the relationships can be expressed in the application
+  - BigData«
 - SQL is suitable for banking transactions or modeling complex relationships. It's main benefit is that it supports transactions and rich features
+  - Transactions
+  - Joins
+  - Relationships
+
+9. Properties:
+- Constraints
+- Attributes
+- Relations (1-1, M-1, M-M)
+- E/R diagram
+-

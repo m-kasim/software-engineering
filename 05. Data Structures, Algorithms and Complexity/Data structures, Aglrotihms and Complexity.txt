@@ -65,10 +65,10 @@ beginning                   [n] indexes from the beginning
                                   \/
   Structure 2:                  [ bool | bool]
 
-8. Pritive types:
+8. Primitive types:
 - int, float, decimal, char, string
 
-9. Collections:
+9. Collections/Linear types:
 - array, list, stack, queue, tree, hash-table
 
 10. Abstract data types:
@@ -100,6 +100,7 @@ beginning                   [n] indexes from the beginning
 - [dynamic programming]
 - [graph search]: DFS and BFS
 - [combinatorial algorithms]: recursive
+- [approximating]
 - [other]: greedy, computational geometry, randomized, genetic
 
 15. Algorithm complexity:
@@ -187,8 +188,15 @@ Best case       :  1 comparison
 19. Polynomial algorithms:
 - They are "fast"
 
+19. Polynomial time:
+
+   S = f (n)
+
+   S - steps
+   n - size of input
 20. Non-polynomial algorithms (Exponential):
 - They are "slow"
+- Non-deterministic
 
 20. P versus NP problem:
 - in full polynomial versus nondeterministic polynomial problem, in computational complexity,
@@ -198,3 +206,70 @@ Best case       :  1 comparison
 - NP-complete problem, any of a class of computational problems for which no efficient solution algorithm has been found.
 - There is no algorithm to compute it in polynomial time
 - Travelling salesman problem: Travel the shortest route - there's no way to calculate it without traversing all routes
+
+22. Algorithm types:
+- Brute Force/Complete Search: A method that looks at all the possibilities and selects the best solution.
+    Pros: simple, should always find the solution since you are looking at every possibility
+    Cons: infeasible as the number of possibilities grows exponentially as the number of items increases
+- Divide and Conquer: Method that divides the problem into smaller parts and then solving those parts. Think binary search.
+- Greedy Approach: Method that chooses the best option at the current time, without any consideration for the future.
+    Pros: quick, simple, may obtain the best solution, or get kinda close
+    Cons: most of the time, we will not obtain the best solution
+- Dynamic Programming: Method that builds up to a solution using previously found sub-solutions. Definitely one of the more advanced techniques, but extremely powerful and applicable.
+    Pros: finds the optimal solution to many problems in polynomial time (whereas brute force would take exponential)
+    Cons: difficult to grasp and apply, takes time to understand the various states and recurrence
+
+23. Properties of an algorithm:
+- Discreteness  : the algorithm must end after [n] steps
+- Definitiveness: with each execution with particular data, the same results must be achieved
+- Clarity       : each step can be executed and then determined which is the next step in the algorithm
+- Massiveness   : the algorithm can be applied for any example of the problem type it solves
+- Endness:      : the algorithm guarantees that in the end it will return a result
+
+24. Data structures:
+- List:
+В C++ Списъкът е наредена последнователност от краен брой еднотипни елементи.
+Всеки елемент се състои от полета, като данните в тях може да бъдат от различен тип – числови, текстови.
+Със списъците може да се изпълняват следните операции – търсене на елемент по номер и осигуряване достъп до съдържанието му, включване на нов елемент на дадена позиция, изключване на елемент с номер от списъка, обединяване на 2 или повече списъка в един, разбиване на списък на някокло отделни, създаване на копие, определяне броя на елементите на списък, търсене на елемент с определено съдържание(по ключ), сориране.
+Същестуват различни начини за представяне на списъци в зависимост от вида на операциите над елементите.
+Основна характеристика на списъка е начинът, по който се осъществява достъпът до елементите му.
+Ако списъкът използва динамично заделяне на памет, той се нарича динамичен списък(иначе се нарича статичен.
+Масивите в C са статични списъци).
+Ако всеки елемент пази указатели към предишния и следващия елемент, нарича се двусвързан списък, иначе - едносвързан.
+Естествено, има и далеч по-сложни видове списъци.
+
+- Stack:
+Стек се нарича списък, при който добавянето на нови елементи, както и изключването, стават само от едната страна на списъка.
+Мнемоника за запомняне на стек е LIFO (last in, first out).
+Пример – пълнител на автомат. Пълнителят на автомат е вид стек. Със сигурност най-мъжественият вид стек.
+
+- Queue:
+Опашка се нарича списък, при който всички включвания на нови елементи стават само от единия край на списъка( край на опашката ), а изключването на елемент само от другия край на списъка( начало на опашката ). FIFO( first in – first out ). Пример - …опашка …за хляб.
+
+- Deck:
+Дек се нарича списък, при който всички включвания и изключвания на елемент може да бъдат извършвани от двата края на списъка. Идва от английското наименование Deque, което пък буквално означава опашка с два края (double-ended queue). Декът е на практика по–рядко използвана структура от данни в сравнение със стека и опашката. В стандартната библиотека на C++ (STL) стековете и опашките са реализирани всъщност чрез използване на дек.
+
+25. Basic algorithm operations:
+- sort
+- randomize
+- reverse
+- copy
+- switch elements
+- insert
+- search
+- find min, max
+
+26. Realizations:
+- Static list:  Array
+- Dynamic list: Linked list        (each elements has a pointer to the next)
+                Double Linked List (each element has a pointer to the previous and next)
+
+27. Видове алгоритми.
+Алгоритмите са три вида: последователни (линейни), разклонени и циклични.
+
+1. Последователни (линейни) алгоритми:
+   алгоритми, съставени от елементарни действия, които се изпълняват едно след друго последователно по реда на записването им.
+2. Разклонени алгоритми:
+   алгоритми, съдържащи действия, които определят кои са следващите за изпълнение действия, в зависимост от изпълнението или неизпълнението на дадено условие.
+3. Циклични алгоритми:
+   алгоритми, които съдържат група от елементарни действия, които се изпълняват многократно.

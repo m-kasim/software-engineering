@@ -1,5 +1,20 @@
 03. Programming languages
 
+00. Translators, Interpretators, Compilers:
+- [translator]: translates the code to machine code (010101010111)
+- 2 types of [translators]:
+  - [compiler]:
+    - compiler optimizes the code and checks for syntax errors
+    - generates object files
+    - links all object files to an executable file
+    - static and dynamic compilator
+    - they are very slow
+  - [interpreter]:
+    - code is interpreted line by line
+    - errors in logic are harder to detect
+    - the result is displayed instantly
+    - repetitive logic is executed multiple times
+
 01. Machine level languages:
 MACHINE LANGUAGES: Imagine them as the “native tongue” of the computer, the language closest to the hardware itself.
 Each unique computer has a unique machine language.
@@ -18,9 +33,17 @@ Assemblers are written for each unique machine language.
 
 03. High-level languages:
 HIGH LEVEL LANGUAGES: High-level languages, like C,C++, JAVA etc., are more English-like and, therefore,
-make it easier for programmers to “think” in the programming language. 
+make it easier for programmers to “think” in the programming language.
 High-level languages also require translation to machine language before execution.
 This translation is accomplished by either a compiler or an interpreter.
 Compilers translate the entire source code program before execution.(Eg: C++, Java)
 Interpreters translate source code programs one line at a time.
 (Eg: Python)Interpreters are more interactive than compilers.
+
+04. Language structure:
+- reserved words
+- identifiers
+- expressions
+- operators
+- subprograms
+- comments
