@@ -1,0 +1,143 @@
+Internet
+
+1. History:
+- It originated as a concept of wide area networking in science laboratories in US, UK and France
+- 1960s: Paul Baran and Donald Davies: [packet switching] - dividing data to packets (originally for a paper for post-Nuclear war communications)
+- US Department of Defense awarded contracts for ARPANET during the 1960s
+- First message: ARPANET 1969 between Stanford and UCLA
+- 1978: TCP/IP - Standard protocol for ARPANET
+- 1980s: Swiss and British scientists developer World Wide Web (WWW)
+- 1980s: ISPs started to emerge
+- ARPANET: Decomissioned in 1990
+- 1987-2001: Dotcom Bubble
+- 1989: Limited private connections in the cities of USA
+- 1995: Commercial restrictions started to be lifted
+- 1995: HTML - Hypertext Markup Language
+- Web 1.0 - 1990-2000: Wide society adoption
+- Web 2.0 - 2000-*: User generated rich content
+
+2. Interfaces:
+- Physical interfaces:
+  [Ethernet] technologies - RJ45 8P8C Twisted Cable Port
+  [Wireless Fidelity] - IEEE 802.11 Standard
+- OS have ports for "listening" for connections
+
+3. Services:
+- Emails, File transfer, Websites, Video and Audio streaming, Data transfer and others.
+
+2. TCP/IP
+- Tranmission Control Protocol
+- Complements the IP
+- TCP: Keeps track of the segments and the efficient route of the packets and provides the details to the IP
+- TCP: When packets are received, it re-assembles them in the correct order
+- IP: Handles the actual transport
+- One of the main protocols of Internet
+- TCP provides reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications
+  running on hosts communicating via an IP network
+- Waits for a response before sending the next packet
+- TCP also ensures that lost/error packets to be re-sent and notifies the source if it fails again
+- Optimized for accurate delivery
+- Used by WWW, email services, authentication and etc.
+-  Structure:
+                IP DATAGRAM
+   ___________________________________________________________
+   |                 |                                        |
+   |    TCP HEADER]  |                  DATA                  |
+   |_________________|________________________________________|
+
+3. UDP
+- User Datagram Protocol
+- which provides a connectionless datagram service that emphasizes reduced latency over reliability.
+- Does not wait for a response before sending the next packet
+- Optimized for fast delivery
+- Used by games, media, streaming, video, etc.
+
+3. DNS
+- Port: 53
+- Translates website names to IP addresses
+- DNS database is stored in a zone file, with the following content:
+  SOA        - Start of Authority
+  AAAA       - IP Address
+  MX         - SMTP mail exchange
+  NS         - Name servers
+  PTR        - Pointer for reverse DNS lookup
+  CNAME      - Domain aliases
+
+4. HTTP
+- Port: 80
+- HyperText Transfer Protocol
+- Foundation of WWW
+- [request]<->[response] protocol for [client]<->[server] communication
+- [client]: browser    (Firefox, Chrome, etc...): Asks for resources at address
+- [server]: web server (Apache, nGINX, gUnicorn): Provides response with HTML or other resources
+- Structured text with links between documents
+- Web cache: In order to improve response time
+- URL: Resources are located via Uniform Resource Locatiors
+- URI: Uniform Resource Identifier schemes. URL is simply a URI that happens to point to a resource over a network
+- Application layer 7 protocol
+
+5. HTTPS:
+- Port: 443
+- HTTP over TLS
+- HTTP Secure (HTTPS) is an extension of the Hypertext Transfer Protocol (HTTP) for secure communications
+- Encrypted using TLS (Transport Layer Security), formerly SSL (Secure Socket Layer)
+- Better privacy and integrity, prevents "man-in-the-middle" attacks
+- Initially it was used only for payments and sensitive data, now it is adopted as a general standard
+
+6. WWW
+- WWW an information space where documents and other web resources are identified by Uniform Resource Locators (URLs),
+  interlinked by hypertext links, and accessible via the Internet.
+- Resources displayed via WWW are often Web pages, which are text-structured HTML ecoded documents
+
+7. DHCP
+- Port: 67, 68
+- Dynamic Host Configuration Protoocol
+- DHCP server dynamically assigns IP addresses to the hosts
+- It allows hosts to automatically resquests IP addresses from the ISP, eliminating the need of Network Administrator
+- APIPA address: Not able to communicate outside the current network
+
+9. IMAP
+- Port: 143
+- Internet Message Access Protocol: GET EMAIL
+- Used by email clients to retrieve email from mail servers using TCP/IP
+- Mail is left on the server, until the user deletes them
+
+10. IMAPS
+- Port: 993
+- IMAP over SSL
+
+10. POP3
+- Port: 110
+- Post Office Protocol: GET EMAIL
+- It has been largely replaced by IMAP
+- Default behavior: DOWNLOAD and DELETE
+- Can be encrypted with TLS: Port: 995
+
+11. SSH
+- Port: 22
+- Secure Shell Protocol
+- secure transfer over unsecure network
+- Remote login, remote file transfer
+- client-server
+- Replacement for Telnet
+- Edward Snowden's files indicate the NSA is able to decrypt SSH sessions
+
+12. TelNet
+- Port: 23
+- Virtual terminal connection
+- It is unencrypted and has security risks
+
+13. SMTP
+- Port: 25
+- Simple Mail Transfer Protocol: SEND EMAIL
+15. TLS/SSL
+
+16. FTP
+- Port: 21
+- File Transfer Protocol
+- client-server model
+- command line interface
+- authentication: cleartext or anonymous
+
+17. SFTP
+- FTP over SSH

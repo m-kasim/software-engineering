@@ -95,6 +95,7 @@ beginning                   [n] indexes from the beginning
 
 14. Algorithm types:
 - [imperative]: Describe the formal steps to achieve something
+- [functional]: What should be the result?
 - [sorting and searching]
 - [dynamic programming]
 - [graph search]: DFS and BFS
