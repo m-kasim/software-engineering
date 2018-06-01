@@ -1,0 +1,88 @@
+Databases
+
+1. Database:
+- An organized collection of data
+
+2. Relational database:
+- A collection of schemas, tables, queries, reports, views
+
+3. DBMS (Database Management System):
+- DBMS interact with the user and to capture, show and analyze data
+- DBMS: Allows administration of a database
+- Examples:
+  SQL Server, MySQL, PostgreSQL, Access, Oracle, MariaDB, MongoDB and others
+
+Types:
+- RDBMS - tables
+- OLAP  - cubes
+- NOSQL - collections
+
+4. Types of Database models:
+
+- [hierarchical]:
+  - stored in a hierarchy, tree data structure
+  - ease of realization
+  - a lot of redundant data
+
+- [network]:
+  - stored in a hierarchy, but allows multiple children of a node
+
+- [relational]:
+  - the most popular one
+
+- [no SQL]: non-relational SQL
+- [multidimensional]:
+- [object]:
+
+4. Formats:
+- SQL
+- ODBC - Open Database Connectivity - API developed by Microsoft and Simba
+- JDBC - Java Database Connectivity - API for Java access to databases
+
+5. SQL
+- Domain specific language for managing data in [relational databases]
+- Accessing many records with a single command
+
+6. Normal forms
+- They try to eliminate data redundancies, in order to avoid anomalies
+- "It's pointless to wear 2 watches"
+
+- [first normal form]:
+  - One thing with one element rule: each row has columns that are each represent one thing and contain one element.
+  - No repeted columnts rule:        there are no repeated columns in the table.
+    Example: Suppliers and products
+
+- [second normal form]:
+  - Within a table that is in second normal form, the data in each columns in each row are dependent on each row's entire primary key.
+  - A primary key is one or more columns in a row that is used to identify and index that row of the table.
+  - Columns that are not related to every column in the primary key are removed.
+  - Columns that are not related to any column in the primary key are retained.
+  - No keys should repeat
+  Example: Stores with the same location
+
+- [third normal form]:
+  Within a table that is in third normal form, the data in each column in each row are dependent only on columns
+  that are part of the primary key.
+  A primary key is one or more columns in a row that is used to identify and index that row of the table.
+  Columns that are not related to any column in the primary key are removed.
+  - No 2 same columnts depending on the same PK should be present in two different table
+
+7. NoSQL:
+- Scalability
+- Performance
+- High Availability
+- They can handle both structured and unstructured data
+- They don't have "joins"
+- No complex transactions support
+- No constraints support - have to be implemented on application level
+- It's recommended to use when the application can handle object relationships on application level
+
+Types:
+- key-value store  : Memcached, Coherence, Redis
+- tabular          : BigTable,  Hbase,     Accumulo
+- document-oriented: MongoDB,   CouchDB,   Cloudant
+
+8. MySQL vs NoSQL:
+- NoSQL provide more performance, SQL provide more functionality
+- NoSQL is good to use when there are big chunks of data and the relationships can be expressed in the application
+- SQL is suitable for banking transactions or modeling complex relationships. It's main benefit is that it supports transactions and rich features
