@@ -1,0 +1,54 @@
+Quality Management
+
+1. Quality Management
+- [Definition]: The quality management process checks the project deliverables to ensure that they are consistent with
+                organizational standards and goals
+- The quality team should be independent from the development team so that they can take an objective view of the software
+
+2. Quality plan:
+- Sets desired software quality
+- Sets also quality assessment process
+- Should not be too long, otherwise no one will read it
+
+3. Quality
+- Quality: How much the software meets its specification
+- some quality requirements are difficult to specify
+
+- [Attributes of quality]:
+  Safety, Security, Reliability, Resilience, Robustness, Understandability, Testability, Adaptability, Modularity, Complexity, Portability, Usability, Reusability, Efficiency, Learnability
+
+4. Standards
+- software standards: Change control process, Project plan approval process and others...
+- process standards: Test form, Review form, Method header format and others...
+- ISO 9001 standard framework
+
+5. Quality management:
+- Inspections
+- Reviews
+- Test plans
+- Informal reviews, Peer review
+
+- Inspection checklist:
+  -- Data faults
+  -- Control faults
+  -- I/O faults
+  -- Storage faults
+  -- Exception management faults
+
+6. Software metrics:
+- Lines of code
+- Fox index (length of sentences)
+- Number of man-hours required to create a component
+- Depth of inheritance tree
+- Cyclomatic complexity
+- Fan-in / Fan-out
+- Length of Identifiers
+- Number of children
+- Reducing the number of faults might still lead to more support calls (related to the _now working_ functionality)
+
+7. Capability Maturity Model Integration:
+Level 1 - Initial
+Level 2 - Managed
+Level 3 - Defined
+Level 4 - Quantitatively managed
+Level 5 - Optimizing
