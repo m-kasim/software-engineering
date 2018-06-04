@@ -96,4 +96,3 @@ Types:
 - Attributes
 - Relations (1-1, M-1, M-M)
 - E/R diagram
--

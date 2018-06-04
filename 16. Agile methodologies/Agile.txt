@@ -1,0 +1,67 @@
+Agile methodologies
+
+1. Agile:
+ Dissatisfaction with the overheads involved in software design methods of the 1980s and 1990s led to the
+ creation of agile methods. These methods:
+- Focus on the code rather than the design
+- Are based on an iterative approach to software development
+- Are intended to deliver working software quickly and evolve this quickly to meet changing requirements.
+
+ The aim of agile methods is to reduce overheads in the software process (e.g. by limiting documentation) and to
+ be able to respond quickly to changing requirements without excessive rework.
+
+2. Agile principles
+- Customer involvement
+- Incremental delivery
+- People, not process
+- Embrace change
+- Maintain simplicit
+
+3. Agile methodology:
+- Plan driven VS Agile
+
+4. XP - Extreme Programming:
+- Small releases: Several new versions a day
+- Increments are delivered to customer every 2 weeks
+- Test-driven development: All tests must be run on commit and a build passes only after all tests pass
+- Full-time customer engagement
+- Constant code refactoring
+- Pair programming
+- Continuos integration
+- Common code ownership
+- User requirements are expressed as scenarios or stories
+- Writing tests before code
+
+5. Scrum
+- Initial planning phase
+- Sprint
+- Sprint end, wrapup and review
+
+6. FDD:
+- Feature driven development
+- Build feature list
+- Plan by feature
+- Design by feature
+- Build by feature
+
+7. DSDM:
+- Dynamic System Development
+
+[Principles]:
+Focus on the business need
+Deliver on time
+Collaborate
+Never compromise quality
+Build incrementally from firm foundations
+Develop iteratively
+Communicate continuously and clearly
+Demonstrate control
+
+[Core techniques]:
+- MoSCOW: MUST, SHOULD, COULD, WOULD have
+- Timeboxing
+- Prototyping
+- Testing
+- Workshop
+- Modelling
+- Configuration management

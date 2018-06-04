@@ -52,3 +52,11 @@ Level 2 - Managed
 Level 3 - Defined
 Level 4 - Quantitatively managed
 Level 5 - Optimizing
+
+8. Lehman’s fifth law
+This ‘law’ suggests that if you add a lot of new functionality
+to a system; you will also introduce bugs that will limit the
+amount of functionality that may be included in the next
+release. Therefore, a system release with significant new
+functionality may have to be followed by a release that
+focuses on repairing problems and improving performance.

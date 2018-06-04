@@ -1,6 +1,6 @@
-03. Programming languages
+Programming languages
 
-00. Translators, Interpretators, Compilers:
+0. Translators, Interpretators, Compilers:
 - [translator]: translates the code to machine code (010101010111)
 - 2 types of [translators]:
   - [compiler]:
@@ -15,7 +15,7 @@
     - the result is displayed instantly
     - repetitive logic is executed multiple times
 
-01. Machine level languages:
+1. Machine level languages:
 MACHINE LANGUAGES: Imagine them as the “native tongue” of the computer, the language closest to the hardware itself.
 Each unique computer has a unique machine language.
 A machine language program is made up of a series of binary patterns (e.g., 01011100) which
@@ -23,7 +23,7 @@ represent simple operations that can be accomplished by the computer (e.g., add 
 Machine language programs are executable, meaning that they can be run directly.
 Programming in machine language requires memorization of the binary codes and can be difficult for the human programmer.
 
-02. Assembler languages:
+2. Assembler languages:
 ASSEMBLY LANGUAGES: They represent an effort to make programming easier for the human.
 The machine language instructions are replaced with simple pneumonic abbreviations (e.g., ADD, MOV).
 Thus assembly languages are unique to a specific computer (machine).
@@ -31,7 +31,7 @@ Prior to execution, an assembly language program requires translation to machine
 This translation is accomplished by a computer program known as an Assembler.
 Assemblers are written for each unique machine language.
 
-03. High-level languages:
+3. High-level languages:
 HIGH LEVEL LANGUAGES: High-level languages, like C,C++, JAVA etc., are more English-like and, therefore,
 make it easier for programmers to “think” in the programming language.
 High-level languages also require translation to machine language before execution.
@@ -40,10 +40,31 @@ Compilers translate the entire source code program before execution.(Eg: C++, Ja
 Interpreters translate source code programs one line at a time.
 (Eg: Python)Interpreters are more interactive than compilers.
 
-04. Language structure:
+4. Language structure:
 - reserved words
 - identifiers
 - expressions
 - operators
 - subprograms
 - comments
+
+5. Syntax and semathics:
+- [Alphabet]  - symbols which make up the programming language
+- [Syntax]    - rules for writing the symbols in the programming language
+- [Semathics] - rules which define the intepretation of the syntax
+
+6. Programming language elements
+- [reserved words]: private, public, protected...
+- [signs]         : 1213, 5123, x, y ...
+- [expressions]   : x*y - 15*z
+- [identifiers]   : new_variable_name
+- [structure]     : parts for declaration and execution of data
+- [operator]
+- [subroutine]
+- [comments]
+
+7. Programming language types:
+- Structural:       Assembler, C
+- Functional:       Lisp, Scheme, Haskell...
+- Logical:          Prolog
+- Object-oriented:  C#, Ruby, Python
