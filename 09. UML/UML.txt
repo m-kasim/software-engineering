@@ -1,7 +1,11 @@
 UML
+https://www.developer.com/design/article.php/1553851/UML-Overview.htm
 
 1. UML
+- Unified Modeling Language: UML offers a way to visualize a system's architectural blueprints in a diagram, including elements
 - Using inheritance, we can create class hierarchies
+- Modelling: Defining a model makes it easier to break up a complex application to discrete pieces that can be individually studied
+- We can focus more easily on the smaller parts of a system and then understand the "big picture."
 - Classes are represented by rectangles, containing their fields and methods
 - Relations between classes are shown in arros
 - Closed triangle arrow = inheritance
@@ -10,13 +14,78 @@ UML
 
 2. Notations:
 
-<< interface >> Animal  // Interface
-            + Add()     // public method
-            - Remove    // private method
-            # Edit      // protected method
 
-- - - - - - |>          // Implements from
+<< interface >> Animal         // Interface
+            + Add()            // public method
+            - Remove           // private method
+            # Edit             // protected method
 
-------------|>          // Inherits from
 
-------------->          // Association between classes
+- - - - - - |>                 // Implements from
+
+
+------------|>                 // Inherits from
+
+
+------------->                 // Dependency
+
+
+------------->                 // Association between classes (one way)
+
+
+--------------                 // Assosication (two way)
+
+
+[A] <>------------- [B]        // Aggregation: [A] has an instance of [B]. [B] can survive without  [A]
+
+
+[A] <*>------------ [B]        // Composition: [A] has an instance of [B]. [B] cannot exist without [A]
+
+
+|-------|
+|       |                      // Package of classes
+|-------|--------------|
+|                      |
+|                      |
+|                      |
+|                      |
+|______________________|
+
+
+3. Diagram types:
+
+- [Static]:                  The static characteristic of a system is essentially the structural aspect of the system. The static characteristics define what parts the system is made up of.
+  -- Class diagram
+  -- Use case diagram
+
+- [Dynamic]:                 The behavioral features of a system; for example, the ways a system behaves in response to certain events or actions are the dynamic characteristics of a system.
+
+  -- Activity diagrams
+  -- Collaboration diagram
+  -- State machine diagrams
+  -- Sequence diagrams
+  -- Object diagram
+
+
+ [Implementation]:           The implementation characteristic of a system is an entirely new feature that describes the different elements required for deploying a system.
+  -- Component diagram
+  -- Deployment diagram
+
+4. Views.
+- [ Design     View]: The design view of a system is the structural view of the system.
+                      This gives an idea of what a given system is made up of. Class diagrams and object diagrams form the design view of the system.
+
+- [ Process    View]: The dynamic behavior of a system can be seen using the process view.
+                      The different diagrams such as the state diagram, activity diagram, sequence diagram, and collaboration diagram are used in this view.
+
+- [ Component  View]: Next, you have the component view that shows the grouped modules of a given system modeled using the component diagram.
+
+- [ Use case   View]: Finally, we have the use case view.
+                      Use case diagrams of UML are used to view a system from this perspective as a set of discrete activities or transactions.
+
+- [ Deployment View]: The deployment diagram of UML is used to identify the deployment modules for a given system.
+                      This is the deployment view of the
+
+5. Automatic UML diagram creation:
+- Visual Studio: Class View
+- Dia: Design UML
