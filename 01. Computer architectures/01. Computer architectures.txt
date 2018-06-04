@@ -5,7 +5,7 @@
 - CPUs have clocks which measure how much time has passed for one operation
 - CPUs handle interrupt requests: Desired and required interrupts (the required ones are executed instantly on the next cycle)
 2. Architectures:
-- Many archictecturs
+- Many architectures
 
 3. RISC: Reduced Instruction Set Computing:
 -- MIPS, SPARC, Alpha, ARM, AVR, PowerPC, PA-RISC
@@ -13,7 +13,7 @@
 - Older devices
 - Has smaller instruction sets
 - Complex architectures are combinations of simple instructions
-- Better for simpler tasks and paralelization requiring tasks (Example: Video encoding. Encoding: Compression of frames)
+- Better for simpler tasks and parallelization requiring tasks (Example: Video encoding. Encoding: Compression of frames)
 - Harder for abstraction while programming code for the CPU
 - [instructions] - they have less [multiple operand instruction sets]
 - [multiple operands]: the OS emulates them
@@ -39,20 +39,21 @@
 
 7. Instruction sets:
 - Single operand   instruction sets - only 1 parameter
-- Multiple operand instruction sets - 2 parameters
+- Multiple operand instruction sets      - 2 parameters
 
 8. CPU Endianess
 - 149 in binary:   1001 01 01
-- [Big endian]:    03   E8 - most significant bit is last - SPARC, PowerPC
+- [Big endian]:    03   E8 - most significant bit is last  - SPARC, PowerPC
 - [Little endian]: E8   03 - most significant bit is first - Intel x84
 - ARM processors can work both with [Big endian] and [Little endian]
 - Java and C# encode their packets in reverse to each other
 - CPU programs can be compiled for one or another type of CPU
-- [Microcode]: Software which is loaded directly to the CPU. Processor microcode is akin to processor firmware. There are some viruses which are saved to the microcode
+- [Microcode]: Software which is loaded directly to the CPU.
+               Processor microcode is akin to processor firmware. There are some viruses which are saved to the microcode
 
 9. CPU Cache:
 - CPUs have caches so they can temporarily store information in order to execute more commands
-- Because the computers need to store the result somewhere, because the RAM is very away
+- Because the computers need to store the result somewhere and the RAM is very away
 - Instead the result is stored in a Cache
 - L1 - closest to CPU, has the largest memory
 - L2 - memory for threads
@@ -60,7 +61,7 @@
 - CPU and RAM are connected via [north bridge]: the fastest speed in the motherboard
 - CPU threats and OS threads are different!
 
-10. Threads:
+10. Threads. Hyperthreading.
 - [thread]: Can execute/"compute" set of instructions
 - Standard CPUs of Intel have 1 or 2 threads per Core
 - [multithreading]: running multiple threads
@@ -72,10 +73,10 @@
 - a 32-bit register can store 2^32 different values - 0-4 294 967 295 integers
 - a 64-bit register can store 2^64 different values
 - It also determines the actual memory addresses that can be assigned by one 1 CPU thread
-- 64-bit OSes are slower, because it takes more time to fill up a single larger register by the CPU, instead of 2 smaller ones, provided
-  that the experiment is done with equal compute speed.
+- 64-bit OSes are slower, because it takes more time to fill up a single larger register by the CPU, instead of 2 smaller ones,
+  provided that the experiment is done with equal compute speed.
 - However, 64-bit CPUs allow larger memory sizes to be added (more GBs)
-- Physical address extension
+- Physical Address Extension (PAE)
 
 12. Memory
 - Volatile memory: DRAM, SRAM - when the electricity stops, the memory is not being saved. It's very fast
@@ -85,7 +86,6 @@
 13. Northbridge:
 - Connects directly the CPU, Memory and PCI-E devices. Very fast
 - Nowadays, the Northbridge and the CPU are integrated
-
 
 14. Southbridge:
 - Connects the Northbridge with other slower devices. Slower
@@ -98,15 +98,15 @@
 - The BIOS OS also searches for an OS and loads it to memory
 
 16. Storage:
-- Hard disks are the main bottleneck in contemporary compiters
+- Hard disks are the main bottleneck in contemporary computers
 - [controller]:
 - [device]:
 - The OS never writes to the hard disk.
-- All OS, actually provide instructions to the [controller], so the [contorller] writes to the DISK
+- All OS, actually provide instructions to the [controller], so the [controller] writes to the DISK
 
 - PATA/IDE - Interface standard master and slave - PARALEL
 - SCSI - Originally for corporate clients - SERIAL
-       - limited by lenght between devices
+       - limited by length between devices
        - more devices
 - Serial ATA - 1 hard disk per cable
              - serialization in the controller
@@ -127,7 +127,7 @@
 - The main difference is, there is no seek time in the disk
 - the problem is, most current software is optimized for HDD seeking heads and not SSDs
 - [log-structured filesystem]: is a file system in which data and metadata are written sequentially to a circular buffer, called a log
-  - files are scattered everywhere not in any order on the disk
+                               files are scattered everywhere not in any order on the disk
 
 19. Serial devices:
 - They have less pins, data is being serialized
@@ -140,7 +140,6 @@
 - General-purpose input/output (GPIO) is a generic pin on an integrated circuit or computer board whose behavior—including
   whether it is an input or output pin—is controllable by the user at run time
 
-
 22. I2C:
 - I^2 synchronous, multi-master, multi-slave, packet switched, single-ended, serial computer bus invented in 1982 by Philip
 - Used for low-level devices communication like termometers, sensors and etc.
@@ -151,8 +150,8 @@
 - Such chips have multiple supported usages (HDMI, WiFI, etc) and be directly attached to a board
 
 24. Network:
-- Layer 1: Cables, Repeater (for dinstances 300+ m), HUB, Transceiver (Converts one signal type to another: optics/electrics)
-- Data is being transffered as eletric signal and signal is being copied
+- Layer 1: Cables, Repeater (for distances 300+ m), HUB, Transceiver (Converts one signal type to another: optics/electrics)
+- Data is being transferred as electric signal and signal is being copied
 - Initially, all vendors made their own protocols
 
 - Layer 2: Data is being copied only for the devices which need it (Physical addresses)
@@ -160,7 +159,7 @@
 
 - Layer 3: IP-address based routing
 
-Calbes: UTP (Unshielded Twisted Pair)
+Cables: UTP (Unshielded Twisted Pair)
 - 8 wire cables
 - Can 4 be used only for transfer
 
@@ -170,7 +169,7 @@ Wiring standards for UTP cables:
 - CROSSOVER
 
 - The twisting is done in order to prevent magnetic problems or signal reduction in longer dinstances
-- In cables less than 1 meter the electrical signal bounches back and returns to the signal emitter. Then it actually adds noise to the next signal
+- In cables less than 1 meter the electrical signal bounces back and returns to the signal emitter. Then it actually adds noise to the next signal
 
 
 

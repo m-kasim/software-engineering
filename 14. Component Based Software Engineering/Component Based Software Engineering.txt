@@ -2,13 +2,15 @@ Component Based Software Engineering
 
 1. Component Based Software Engineering
 - [Definition]: Re-use of entities called 'components'
-- It emerged from the failure of object-oriented development to support effective reuse. Single object classes are too detailed and specific.
-- Components are more abstract than object classes and can be considered to be stand-alone service providers. They can exist as stand-alone entities.
+- It emerged from the failure of object-oriented development to support effective reuse.
+  Single object classes are too detailed and specific.
+- Components are more abstract than object classes and can be considered to be stand-alone service providers.
+  They can exist as stand-alone entities.
 
-1. Components
+1. Components:
 - [Definition]:
- A software component is a software element that conforms to a component model and can be independently deployed and
-  composed without modification according to a composition standard.
+ A software component is a software element that conforms to a component model and can be independently
+  deployed and composed without modification according to a composition standard.
 - They are independent and don't interfere with each other
 - Implementation is hidden
 - Communication via interfaces only
@@ -44,15 +46,15 @@ Component Based Software Engineering
 - CCM - CORBA Component Model  - (CORBA)
 
 CBSE problems
-- Component trustworthiness - how can a component with no available source code be trusted?
-- Component certification - who will certify the quality of components?
+- Component trustworthiness    - how can a component with no available source code be trusted?
+- Component certification      - who will certify the quality of components?
 - Emergent property prediction - how can the emergent properties of component compositions be predicted?
-- Requirements trade-offs - how do we do trade-off analysis between the features of one component and another?
+- Requirements trade-offs      - how do we do trade-off analysis between the features of one component and another?
 
 3. Middleware:
 - Component models are the basis for middleware that provides support for executing components.
 
-4. Component integration / composition:
+4. Integration / composition of components:
 - Sequential composition
 - Hierarchical composition
 - Additive composition

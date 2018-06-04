@@ -22,8 +22,8 @@ Project Management
 - Short cycles
 - "Fast speed" adaptation to Waterfall
 - There are multiple teams, together with [code reuse], [component reuse] and merges between teams
-- Several teams work parallelly
-- Parallel modeling:  Business modeling, Data modelling, Process modelling
+- Several teams work paralelly
+- Parallel modeling:  Business modeling, Data modeling, Process modeling
 - Construction
 - Integration
 

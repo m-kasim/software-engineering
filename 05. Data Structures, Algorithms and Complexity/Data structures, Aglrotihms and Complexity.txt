@@ -4,7 +4,6 @@ Data structures, Algorithms and Complexity
 - In computer science, [data structure] is a particular way of sorting and organizing data
   in a computer, so it can be used efficiently
 
-
 Examples:
 - Person structure (first name + last name + age)
 - Array of int: int[]
@@ -34,9 +33,9 @@ beginning                   [n] indexes from the beginning
 
 4. Stack:
 - [stack] remembers the addresses from which functions have been called
-- [stack] also remembers the paramters of these functions
+- [stack] also remembers the parameters of these functions
 - [stack] deinitilizases the variables in reverse order, after we are out of the scope in the program
-- [stack] variables are stored in the stck
+- [stack] variables are stored in the stack
 
 5. Heap:
 - [arrays], [objects], [strings] are stored in the heap
@@ -169,9 +168,9 @@ Best case       :  1 comparison
 
 - C# applies fast optimizations in "Release" mode. It does not apply optimizations in "Debug" mode
 
-17. Compexity expresions:
-- [matrix]: An algorithm filling a matrix with size [m] x [n] will be:   O(m * n)
-- [graph]: A traverse of graph with [n] vertices and [m] edges will be:  O(m + n)
+17. Complexity expressions:
+- [matrix]:             An algorithm filling a matrix with size [m] x [n] will be:    O(m * n)
+- [graph]:              A traverse of graph with [n] vertices and [m] edges will be:  O(m + n)
 - [memory complexity]:  linear array: O( n )
                         2D array      O(n^2)
 18. The hidden constant:
@@ -194,6 +193,7 @@ Best case       :  1 comparison
 
    S - steps
    n - size of input
+
 20. Non-polynomial algorithms (Exponential):
 - They are "slow"
 - Non-deterministic
@@ -224,7 +224,7 @@ Best case       :  1 comparison
 - Definitiveness: with each execution with particular data, the same results must be achieved
 - Clarity       : each step can be executed and then determined which is the next step in the algorithm
 - Massiveness   : the algorithm can be applied for any example of the problem type it solves
-- Endness:      : the algorithm guarantees that in the end it will return a result
+- Endness       : the algorithm guarantees that in the end it will return a result
 
 24. Data structures:
 - List:

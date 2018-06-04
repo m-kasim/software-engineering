@@ -6,11 +6,11 @@ OS architecture - Part 1:
 - Manages hardware resources
 - Provides common services for the application developers
 - Acts as an intermediary between the user and the system
-- All remote devices have their contorllers
+- All remote devices have their controllers
 
 02. OS types:
 - [non-interrupted execution] - can be interrupted by the hardware (newer)
-- [interrupted execution] - can be interrupted by the hardware
+- [interrupted execution]     - can be interrupted by the hardware
 
 03. Interrupts:
 - In operating systems, [interrupt] is the key event for which an operating system waits for (state change)
@@ -21,7 +21,8 @@ OS architecture - Part 1:
 04. OS loops:
 - In general, the way an OS works can be represented as a loop
 - This loop is executed, until an [interrupt] event is not caught
-- There are functions which are non-interruptable (critical time-sensitive functions) - they raise a flag on the CPU
+- There are functions which are non-interruptable (critical time-sensitive functions)
+  they raise a flag on the CPU
 
 5. Kernel architecture:
 - [ Kernel space ] - reserved only for the OS and the hardware (Device Drivers, Dispatcher, File System,)
@@ -48,7 +49,7 @@ OS architecture - Part 1:
   - Due to the different modules, it is recommended to update the micro kernels all-together (not only seperate packages)
 
   7.3. [Hybrid kernels]: Supports direct link from [user space] to [kernel space]
-  - Some modules are inside the kernel: Application ICP, Device Driver, Virtual Memory, Scheduling
+  - Some modules are inside the kernel: Application IPC, Device Driver, Virtual Memory, Scheduling
   - Other modules are outside the kernel: File server, UNIX server
 
 8. Kernel software:
@@ -65,9 +66,8 @@ OS architecture - Part 1:
 
 9. Multi-platform:
 - OS can support different CPU architectures
-- The linux kernel has been compiled with support for various architecturs: Supports currently 27 architectures
+- The linux kernel has been compiled with support for various architectures: Supports currently 27 architectures
 - Windows kernel: Compiled on C#
-
 
 10. Memory manager:
 - Cares for physical memory allocation
@@ -76,7 +76,7 @@ OS architecture - Part 1:
 - It also tells to the CPU scheduler where the memory is located
 - [Physical Address Extension]: Allowing 32-bit systems to have more than 4GB RAM. A single program is limited to 4GB
 - Linux memory manager: In general, still working a little bit crappily because it's difficult to make it work well for all situations
-  SLAB - queues, sssigns [stacks] per CPU
+  SLAB - queues, assigns [stacks] per CPU
   SLUB - good for parallel queues, there is no need for synchronization - Default in Linux
   SLOB - good for fragmentation                                         - Used for embedded systems
 - In many applications, the main problem is the synchronization
@@ -134,8 +134,8 @@ OS architecture - Part 1:
 
 - Realtime (RTOS):
   - The OS guarantees that an answer will be provided in X miliseconds
-  - operating system that has been developed for real-time applications and typically used for embedded applications on a
-    special-purpose computer with a limited set of functions determined by the hardware design.
+  - operating system that has been developed for real-time applications and typically used for embedded
+    applications on a special-purpose computer with a limited set of functions determined by the hardware design.
 
 16. Thread scheduling
   16.1. Windows:
@@ -147,18 +147,20 @@ OS architecture - Part 1:
   - Niceness: Priority levels in Linux
   - Linux has 100 priorities
   - Linux has "Nice level" lists in each CPU core
-  - Each PID has X amount of TICKS in this "Nicness" lists
+  - Each PID has X amount of TICKS in this "Niceness" lists
   - CPU goes over all the nice list and executes them
 
 17. I/O Scheduling:
 - Linux I/O schedulers:
-  - CFQ (Completely Fair Queuing): per process queues and then allocates time slices for each of the queues to access the disk
-  - Anticipatory: Anticipates synchronous read, good for video streaming. This is good for continous files (videos). It "expects" and prefetches the next blocks of data in the RAM
-  - Deadline: Imposes a deadline on all I/O operations, in order to prevent starvation of requests
-  - Noop: Simple FIFO queue, implements request merging
+  - [CFQ (Completely Fair Queuing)]: per process queues and then allocates time slices for 
+    each of the queues to access the disk
+  - [Anticipatory]: Anticipates synchronous read, good for video streaming.
+    This is good for continous files (videos).  It "expects" and prefetches the next blocks of data in the RAM
+  - [Deadline]: Imposes a deadline on all I/O operations, in order to prevent starvation of requests
+  - [Noop]: Simple FIFO queue, implements request merging
 - There are different schedules, because there are different disks (HDD, SDD)
 
-18. Network schedling:
+18. Network scheduling:
 - Windows: Only 1 scheduler
 - INGRESS: Filter incoming packets (like, allow 10%, 20% of the packets)
 - EGRESS:  Filter output packets

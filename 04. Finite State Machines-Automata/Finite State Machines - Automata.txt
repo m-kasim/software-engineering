@@ -77,7 +77,7 @@ Example:
   reading an input symbol is required for each state transition.
 - Non-deterministiv automata does not need obey the above rules
 
-    M = <Q, Σ, δ, q.0, F>
+    M = < Q, Σ, δ, q.0, F >
 
 [Q] - states
 [Σ] - alphabet

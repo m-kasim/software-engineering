@@ -45,7 +45,7 @@ Interpreters translate source code programs one line at a time.
 - identifiers
 - expressions
 - operators
-- subprograms
+- subroutines
 - comments
 
 5. Syntax and semathics:
@@ -59,7 +59,7 @@ Interpreters translate source code programs one line at a time.
 - [expressions]   : x*y - 15*z
 - [identifiers]   : new_variable_name
 - [structure]     : parts for declaration and execution of data
-- [operator]
+- [operator]      : !, *, %
 - [subroutine]
 - [comments]
 
