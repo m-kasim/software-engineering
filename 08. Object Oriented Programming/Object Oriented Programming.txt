@@ -1,0 +1,265 @@
+Object Oriented Programming
+https://www.youtube.com/watch?v=nWFFuArWzvE
+
+0. Class:
+- [class] defines attributes and behavior
+  * fields
+  * properties
+  * methods
+
+public class Labyrinth
+{
+  public int size
+  {
+    get;
+    set;
+  }
+}
+
+0.1. Fundamental principles:
+- Inheritance:   Inherit members from parent class
+- Abstraction:   Define and execute abstract actions
+- Encapsulation: Hide the internals of the class
+- Polymorphism:  Access a class through its parent interface
+
+0.2. Additional principles to OOP:
+- Exceptional handling
+- Code re-use / Reusability
+- Separation of concerns: one [class] does not interfere in the actions of another
+- Cohesion
+- Coupling
+
+- [is] checks if an [object] belongs to a [class] or its children
+- Multiforms: A single object can be interpreted as multiple types (circle and square are both shapes)
+- [!]: A method either does what it say it does, or returns an exception!
+
+1. Inheritance:
+- Class hierarchies: - class diagram
+          [Animal]
+             |
+   --------------------
+   |         |        |
+[Human]  [Monkey]   [Cow]
+
+- Allows the [child] to inherit the [parent] (base) [class] characteristics: [attributes], [operations]
+- [child] class can extend the [parent] with new fields and methods. They can also re-define methods
+- [!] - [class] can IMPLEMENT an [interface] by providing implementation for all its methods
+- the [base] class of all classes is [Object] (C#)
+- Inheritance inherits all properties and methods, even if they are private - you just dont have access to them (in C#) and you cannot remove the inherited attributes
+- Using classes help programmers develop separate functionalities without interfering with each other
+
+- [inheritance]: A class INHERITS or EXTENDS the base class
+  Notation: Triangle         [base class] --------|> [child class]
+
+- [interface]: A class IMPLEMENTS the methods of a base class
+  Notation:                  [interface] ··········> [class]
+
+- [derived interface]: [base interface] --> [extended interface]
+  an interface extends another one
+
+- [multiple inheritance]: inherit more than 1 parent class.
+  - C# supports inheritance of multiple interfaces
+  - C++ supports multiple inheritance
+- [!]: keyword [base]: call the parent constructor (not the current class one)
+  public Circle : Shape (int x, int y) : base (x)
+
+- [!]: Constructors are NOT inherited!
+- [!]: You cannot create an object with the constructor of an another class. Only with the current class (and then it will get the inherited attributes of the class)
+- [!]: Private members can be accessed via [reflection] (C#)
+- [!]: It's a good practice to set private fields via properties
+- [!]: It's a good practice when creating a class, all fields initially to be private (you will be forced to  turn the ones which need to public later anyway)
+- [!]: Structures cannot be inherited
+- [!]: Static constructors CAN be inherited!
+- [!]: Members/properties cannot be deleted, only hidden
+- [!]: properties/methods can have their access level changed/overriden in the children class! this hides the previous class
+
+  public Dog(int age, string breed) : base(age)
+  {
+    this.breed = breed; // sets the field 'breed'
+  }
+
+- Usa [inheritance]        for [is-a] relationships  (dog IS A  (an) animal)
+- DO NOT use [inheritance] for [has-a] relationships (keyboard has buttons)
+Benefits:
+- Reusability
+- Extensibility
+- Provides abstraction
+
+- ACCESS MODIFIERS
+- [public]:             acc3ess is not restricted
+- [private]:            access is restricted to the class, where it is
+- [protected]:          access is allowed to the containing class and its children
+- [internal]:           access is limited to the current assembly
+- [internal protected]: access is limited to the current assembly or the children
+
+- [virtual] properties and methods: the children can override the implementation of these methods!
+
+2. Abstraction:
+- [abstraction]: ignoring irrelevant features, properties and functions and focusing on the important ones (relevant to the given subject!)
+                 it helps managing complexity
+
+Examples:
+- abstraction: moving
+- actuality:   walking, flying, crawling
+
+- Implementation via: [abstract class], [interface], [inheritance]
+
+2.1. Interface:
+- Notation: << interface >> Animal
+            + Add()   // public method
+            - Remove  // private method
+            # Edit    // protected method
+- [interface] defines a set of operations (empty methods and properties, left to be implemented later)
+- it's like a [contract] that a particular class will execute a particular action
+- it's also like a template, ready to be filled
+
+public interface IFigure
+{
+  void Draw();
+}
+
+- [interface]: it's a contract
+- everything is [public], [virtual] and [abstract] in an interface! but it's not written!
+- they are full abstraction
+- the [interface] promises that a certain behavior will be implemented
+- [move] -> how exactly (abstraction)
+- the interface never knows and specifies the exact implementation
+- they describe a prototype of group methods, properties and events - NO ACTUAL IMPLEMENTATION!
+- can be used to define [abstract data types]
+- can be inherited
+- CANNOT be instantiated
+- [!] all members are [public]!
+- [!] the "implementer" class must implement ALL interface methods!
+- [!] inside a class, there can be 2 different implementations of methods with the same name, but of different interfaces!
+      In this case, we need to use [explicit interface implementation]
+
+2.2. Abstract classes:
+- they are partial abstraction: mixed abstraction // unfinished class!
+- concrete class are concrete abstraction
+- They are mix between [class] and [interface]
+- They are _partially_ or _fully_ unimplemented
+- [!] Not implemented methods are marked with [abstract] and are left empty
+- [!] Cannot be instantiated directly
+- [!] Children must implement all [abstract] methods, or declare them [abstract] as well
+- [abstract]: it marks that the implementation has been "delayed" for another method (children)
+
+- [abstract method]: method without implementation (to be implemented in a child)
+- [abstract class]: when a class contains at least 1 [abstract method], it is an [abstract class]
+- [abstract class]: they are used for modeling abstract concepts: person, item, event, etc.
+- [abstract class]: you cannot instantiate an object from it!
+- [!]: You can't have an abstract method in a class which is not abstract
+
+Example for abstract method:
+We will have an exam, but we don't know what the exam will be
+
+- [Difference between abstract and interface]:
+  - interface cannot contain method with implementation
+  - interface members dont have access modifiers (they are all public)
+  - interface cant define fields or constructors
+
+Example:
+- class [country] has interface [citizen]
+
+Syntax:
+  class Rectange : IShape // inherit the interface IShape
+  {
+    public void SetPosition(int x, int y) { ... }  // Actual implementation of the predefined methods of the interface
+    public void CalculateSurface()        { ... }
+  }
+
+2.2.3 [abstract data types]:
+- IList<T>
+- ADT are data types defined by a set of operations (interface)
+  -Add()
+  -Remove()
+  -Clear()
+- We dont know what exactly a list is, but we can add, remove and clear in it
+
+3. Encapsulation:
+- [Definition]: hides the implementation details
+                class announces some operations (methods) to clients via its [public] interface
+                it encapsulates implementation details from other modules (so it is easily changeable, without affecting other modules)
+- [!] [private fields]: All data fields of a class should be hidden.
+- [!] [public members]: Instead the are accessed via properties [readonly, readwrite]
+- [!] No interface members should be hidden
+- [!] non-interface methods are declared private/protected
+- constructors are almost always public
+
+Example:
+The encapsulation of a TV: it hides the complicated hardware and has buttons for functioning
+
+4. Polymorphism:
+- [Definition]: The ability to have more than one form (objects can have more than 1 type).
+                In programming: The ability of a child class to change the behavior of a parent class
+                It allows [abstract operations] to be defined and invoked (defined in the parent's class and implement in the child's class)
+- A class can be used through its parent's interface, but a child might override some of the parent's actions
+- Why use abstraction? Because it is better to work with a higher abstraction, in order to be more flexible in defining their attributes
+
+Implementation: via [virtual]
+- Defined in the base class and be changed (overriden) in the child
+- We use a higher abstraction, by using the base class first, then we modify (if needed) in the child
+- Can be called through base class' interface
+- [late binding]: polymorphism is achieved via late binding
+- [V table]:      table of the virtual methods on the memory
+Example:
+public virtual void Draw() { ... }
+
+Overriding in the child class:
+public override void Draw() { ... }
+
+[pure virtual]:
+- abstract method are purely virtual
+- abstract methods re designed to be changed later
+- interface members are also purely virtual
+- [!][Image 09] Hide implementation of virtual
+  public new double CalculateSurface() { return }
+
+[override]:
+- the method must be [abstract], [virtual] or [override]
+
+- [Type]: Part of reflection API (so it can look inside the objects)
+
+5. OOP design approach:
+- Composition of similar items: Big controls are a composition of smaller simpler controls
+- Object-oriented hierarchy
+- Common properties and behavior
+
+6. Exception handling
+- It's the main error handling approach in OOP
+- [Exception]: a special class which holds information about an error or unusual situation
+- [exceptions] are raised via the [throw] keyword
+- Syntax:
+
+  try-catch-finally
+
+  OR
+
+  using (...)
+
+Types:
+- System exceptions
+- User/Custom exceptions: by inhering [ApplicationException]
+
+- Exceptions have [message] and sometimes also [InnerException] which is a pointer to the cause of the current exception  (another exception)
+
+7. Cohesion and Coupling:
+- [cohesion]: How closely the routines in a class or the code in a routine supports a central purpose (is this the right place for it)
+- [cohesion] must be strong. it implies that a [class] contains strongly-related functionality for single purposity
+- [cohesion] is a powerful tool for managing complexity
+- [bad cohesion]: it's like spaghetti - you pull one thing, but it takes with itself all other modules
+
+8. Coupling
+- [coupling]: dependenace. Describes how tightly a class or routine is related to other classes or routines
+- [coupling] must be kept _loose_. Modules must be little dependent or totally independent.
+- All classes/routines must have small, direct, visible and flexible relationships to other classes/routines
+
+Example: Cables are not a part of the computer and can be easily replaced
+         [high coupling] : A VGA controller attached with 32-pins to the motherboard
+         [loose coupling]: A HDD attached with a single SATA cable to the motherboard
+
+- [high coupling] can be attached via =a lot of [private] access fields
+
+- [spaghetti code]: A combination of [bad cohesion] and [tight coopling]:
+
+  Example:
+  The bouncer uses the PC of a lecturer and changes his slides, and the programmer goes and switches off the security cameras of the bouncer

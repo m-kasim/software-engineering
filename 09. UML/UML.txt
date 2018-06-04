@@ -1,0 +1,22 @@
+UML
+
+1. UML
+- Using inheritance, we can create class hierarchies
+- Classes are represented by rectangles, containing their fields and methods
+- Relations between classes are shown in arros
+- Closed triangle arrow = inheritance
+- Other arrows          = some kind of association
+- [!] Assosiation: to instantiate an object inside a class, which already has inherited that object
+
+2. Notations:
+
+<< interface >> Animal  // Interface
+            + Add()     // public method
+            - Remove    // private method
+            # Edit      // protected method
+
+- - - - - - |>          // Implements from
+
+------------|>          // Inherits from
+
+------------->          // Association between classes
