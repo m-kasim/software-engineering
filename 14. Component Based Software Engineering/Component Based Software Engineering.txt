@@ -1,0 +1,60 @@
+Component Based Software Engineering
+
+1. Component Based Software Engineering
+- [Definition]: Re-use of entities called 'components'
+- It emerged from the failure of object-oriented development to support effective reuse. Single object classes are too detailed and specific.
+- Components are more abstract than object classes and can be considered to be stand-alone service providers. They can exist as stand-alone entities.
+
+1. Components
+- [Definition]:
+ A software component is a software element that conforms to a component model and can be independently deployed and
+  composed without modification according to a composition standard.
+- They are independent and don't interfere with each other
+- Implementation is hidden
+- Communication via interfaces only
+- Component platforms are shared and reduce development costs
+- Components provide a service without regard to where the component is executing or its programming language
+
+- [Characteristics]:
+  -- Standardized
+  -- Independent
+  -- Composable
+  -- Deployable
+  -- Documented
+
+- The component is an independent, executable entity. It does not have to be compiled before it is used with other components
+- The services offered by a component are made available through an interface
+- The component interface is expressed in terms of parameterized operations and its internal state is never exposed
+
+- Provides [interface] - this is its API
+- Requires [interface]
+
+- [Container]:             This is a set of interfaces used to access the service implementations
+- [Re-use]:                Components can be developed with re-use or not in mind
+                           There is a tradeoff between usability and re-usability (specific <--> general)
+- [Certification]:         Does the component meet its specification?
+- [Exception handling]:    It should only define the exceptions, but let the application itself handle the exceptions
+- [Wrapper interfaces]:    Provide support for legacy systems (in legacy components). It's still less expensive than writing a new component
+- [Component composition]: Creating a system by combining [components]
+- Normally you have to write ‘glue code’ to integrate components
+
+2. Component Model Standards:
+- EJB - Enterprise Java Beans  - (Sun)
+- COM - Component Object Model - (Microsoft)
+- CCM - CORBA Component Model  - (CORBA)
+
+CBSE problems
+- Component trustworthiness - how can a component with no available source code be trusted?
+- Component certification - who will certify the quality of components?
+- Emergent property prediction - how can the emergent properties of component compositions be predicted?
+- Requirements trade-offs - how do we do trade-off analysis between the features of one component and another?
+
+3. Middleware:
+- Component models are the basis for middleware that provides support for executing components.
+
+4. Component integration / composition:
+- Sequential composition
+- Hierarchical composition
+- Additive composition
+
+- Incompatible components can be made to work together via [adaptors]
