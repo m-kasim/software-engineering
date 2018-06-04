@@ -1,0 +1,136 @@
+XML
+https://www.youtube.com/watch?v=WcRJBUIyAMM
+
+1. XML:
+- Extensive Markup Language, 1996, W3C
+- Universal language (notation) for describing structured data using text with tags
+- SVG is based on XML
+- The data is stored together with metadata abou it
+- XML is a standard for creating other languages or data representation
+- You can create your own attributes and tags
+- XML is strict on formatting
+- XML looks like HTML
+- RSS is based on XML
+- XML is a format for data: Uses tags and attributes
+- Developed by W3C
+- URI can be URL or URN
+
+2. Structure:
+<?xml version="1.0"?>                            // XML header tag (prolog)
+<library name=".NET Developer's Library">       // Root document element
+  <book>
+    <title>Harry Potter and The Goblet of Fire</title>
+    <author>J. K. Rowling</author>
+    <isbn>84213-312312-3123123</isbn>
+  </book>
+</library
+
+- Only 1 root element
+- All tags must be closing
+- Order of closing must be correct
+- No interval in XML are allowed in tags
+- Special parsers are needed to read the XML
+
+3. HTML and XML
+- XML is more strict than HTML
+- XHTML - all attributes must be closed
+- HTML is a language, XML is a standard for creating other languages
+- JSON is an alternative to XML and its simpler
+- Linux users tend not to use XML
+
+4. Advantages of XML:
+- Benefit: It is human-readable
+- MS Word document is an XML file
+- Allows different systems to intergrate with each other
+- It's very useful for documents
+- A lot of modern application config files are in XML
+
+5. Disadvantages of XML:
+- Data becomes bigger than binary formats => more disk space and network
+- But it can be compressed
+- DOCX is a compressed XML file
+- Decreases performance, because requires a parser
+- It's not useful for very big images and video
+
+6. XML namespaces:
+- Namespaces allow using different tags with the same name
+- Namespace concatenates with the value it is paired with
+- It's good for namespaces to have versions
+
+<?xml version="1.0" encoding="utf-8"?>
+<sample:towns xmlns:sample="https://towns.com/1.0">
+  <sample:town>
+    <sample:name>Sofia</sample:name>
+    <sample:population>1 000 000<sample:population>
+  <sample:town>
+<sample:towns>
+
+7. XML schemas
+- They define rules and attributes, order and default values
+- XML structure is defined by schemas
+- Standards:
+  DTD - Document Type Definition       - Older, becoming obslete
+  XSD - XML Schema Definition Language - New
+
+7.1. DTD:
+- Formal language for describing XML structure
+- Set of rules for tags and their attributes
+- Rarely used nowadays, replaced by XSD
+
+Example - DTD:
+<!ELEMENT library (book+)>
+<!ATTLIST library name CDATA #REQUIRED>
+<!ELEMENT book (title, author, isbn)>
+<!ELEMENT title  (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+
+7.2. XSD:
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="note">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="to" type="xs:string"/>
+      <xs:element name="from" type="xs:string"/>
+      <xs:element name="heading" type="xs:string"/>
+      <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
+
+- VisualStudio has an automatic support and editor for XSD
+- XSD must be attached to an XML in order to be validated
+
+8. XML parser:
+- [Definition]: programming libraries which make working with XML easier
+- Usage:
+  - Extract data from XML
+  - Modify existing XML
+  - Validate by schema
+  - Transform from one XML to another (by signing with digital signature)
+
+- Models of work:
+  - DOM  (Document Object Model):         Represents XML as tree in memory. Entire XML is loaded at once. Allows XML to be edited. Small documents
+
+  - SAX  (Simple API for XML processing): Reads XML tag by tag. Event-driven API. Allows analyzing of the read portions on each step. XML is loaded piece by piece.
+                                          Callbacks (events) are emitted upon reaching a certain tag. Stream access: going back or jumping tags is not allowed.
+                                          Less memory use. It requires a state machine to be created. Documents cannot be edited. For large documents
+
+  - StAX (Streaming API for XML):         Like StAX but works in "pull" mode. It's not even driven. Developer manually must code "go to next element"
+
+9. XPath:
+- XML Pathing Language
+- [Definition]: Language for search/addresing in XML
+- XPath expressions contain paths of nodes and filter criteria
+
+Examples:
+/library/book[isbn='1-9038380-444']
+/catalog/cd[@price < 10.80]
+/book/chapter/[3]/paragraph[last()]
+
+10. XSLT - XSL Transformation:
+- [Definition]: Transforms one XML document to another XML with a different structure
+- XSLT depends on XPath (XPath is used to match parts from the input document and replace them with another XML)
+- In particular, XSLT can be used for transforming XML document to XHTML
