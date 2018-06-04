@@ -1,0 +1,136 @@
+Distributed systems
+
+1. Distributed systems
+- [Definition]: The software is computed on loosely connected processors across a network
+
+2. Characteristics:
+
+Benefits:
+- Sharing of resources
+- Openness: hardware and software from different sources is used
+- Concurrence
+- Scalability
+- Fault tolerance
+
+Drawbacks:
+- Complexity
+- Insecure
+- Hard to use
+- Unpredictable
+
+3. Architectures:
+
+3.1. Client-server
+- [server] provides [services] to [clients]
+- [clients] might not know about the [clients]
+- [thin client]: the majorify of the features are on the server. Only Presentation layer is on the client.
+- [fat client]:  the majorify of the features are on the client application. Application and Presentation layers are on the client
+- There's a tendency of migration from [fat] to [thin] clients now, due to the cloud
+
+3.2. Layered architecture
+- [ Presentation layer ]
+- [ Application layer  ]
+- [ Data layer         ]
+- 3-Tier architecture: Each layer can be computed on a separate CPU
+
+3.3. Distributed objects:
+- There is no difference between [client] and [server]
+- Each [object] accepts and provides [services]
+- Communication via ORB (Object Request Broker)
+- Flexible, Good resources, Hard to control
+
+3.4. Blockchain
+- A global database, which has a record of all transactions that has happened
+-
+4. Middleware:
+- [Definition]: Software which sits in the "middle" between a components of a distributed system
+- Usually, it is a software
+
+Examples:
+- Data monitors
+- Transaction monitors
+- Communication controllers
+
+4.1. Middleware types:
+  1. [ Message oriented middleware] - events/messages between systems are delivered via an message broker (ORB)
+  2. [ Intelligent middleware     ] - it uses intelligent agents to turn signals into actionable business information
+  3. [ Content-centric middleware ] - clients request [content] via unique IDs without carying how it will be delivered to them. The middleware tries to deliver them through the best available sources
+
+5. CORBA:
+- Common Object Request Broker Architecture (CORBA)
+- [Definition]: A standard for communications of systems that are deployed on diverse platforms
+- It uses an object-oriented model
+
+- It requires 2 levels:
+  On logical communication level, it allows different computers to exchange data and control instructions
+  On component level, it makes possible the development of new components
+- [objects]: the CORBA object is well-defined object in a neutral interface defined in IDL (Interface Definition Language)
+- [objects]: they can be compared to the C++ or Java objects
+- Different language objects can communicate with each other
+
+- [ORB, object request broker]: facilitates communication between CORBA objects (it connects objects)
+- ORB calls objects (the call goes through ORB), and the called object connects to the interface of the caller object
+
+- [CORBA services]:
+  - [discovery]:    allows [objects] to be discovered
+  - [events]:       allows [objects] to emit event notifications
+  - [transactions]: they support atomary and rollback transactions
+
+6. Peer-To-Peer architectures:
+- Decentralized systems in which each client can execute all operations
+- In general they are user systems, but they are being increasingly used in business
+- [architecture]:
+  - [fully decentralized]
+  - [partially decentralized]
+
+7. Standards for services:
+- SOAP - Simple Object Access Protocol
+- WSDL - Web Services Descrition Language
+- UDDI - Universal Description, Discovery and Integration
+
+8. COM:
+- Microsoft Windows-only cross-language object model
+- Component Object Model
+- Component tools which are executed on the client side
+- Requires COM to be installed
+- COM is an interface standard
+- Allows re-use of objects
+- Does not optimize memory garbage collection
+
+9. DCOM:
+- Distributed Component Object Model
+- Executed on the server
+- Requires COM only to be installed somewhere on the network
+- A model for distributed applications
+- Components CANNOT be re-used
+- Has a distributed garbage memory collector
+
+10. Java RMI:
+- Remote Method Invocation
+- [Definition]:
+  A Java API that performs remote method invocation (RMI), the object-oriented equivalent of remote procedure calls (RPC)
+- Executed via Java Remote Method Protocol (JRMP)
+- CORBA version for non Java
+
+11. GRID computing:
+- [Definition]:
+  Grid computing enables virtual organizations to share geographically distributed resources as they pursue
+  common goals, assuming the absence of central location, central control, omniscience, and an existing trust relationship.
+
+- [Architecture]:
+  _________________________________
+ |\________________________________\   - - - - - - - - - - - - - - - - APPLICATION LAYER - - - - - - - - - - - - - - - - - - - - - -
+ ||          User portals          |   [Grid Access & Info]     [Problem Solving Environments]         [Application Science Portals]
+ ||________________________________|   - - - - - - - - - - - - - - - - TRANSPORT LAYER - - - - - - - - - - - - - - - - - - - - - - -
+ ||          Service layers        |   [Co-Scheduling]          [Resource discovery and allocation]    [Fault tolerance]
+ ||________________________________|   [Authentication]         [Naming & Files]                       [Events]
+ ||          Resource layers       |   - - - - - - - - - - - - - - - - LINK LAYER - - - - - - - - - - - - - - - - - - - - - - - - -
+ \|________________________________|   [Computers]              [Databases]        [Online instruments]    [Software]
+
+
+- [Layers]:
+  - Application
+  - Collective
+  - Resource
+  - Connectivity
+  - Fabric
