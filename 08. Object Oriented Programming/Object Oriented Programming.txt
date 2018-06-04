@@ -263,3 +263,8 @@ Example: Cables are not a part of the computer and can be easily replaced
 
   Example:
   The bouncer uses the PC of a lecturer and changes his slides, and the programmer goes and switches off the security cameras of the bouncer
+
+9. Addendum:
+- [typization]: classes/structures which can work only with certain types of data. Typization can also become dynamic via abstraction.
+                typization can also be viewed as applying constraints of certain data type (values, structure, etc.)
+- [concurrent programming]: multiple operations can be processed simultenously via threads (instead of serial execution). Problem is thread synchronization.

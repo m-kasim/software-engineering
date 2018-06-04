@@ -1,0 +1,53 @@
+Project Management
+
+1. Software development models:
+- Waterfall
+- Rapid Application Development
+- Evolutionary process model: Incremental and Iterative
+- Prototype model
+- Spiral model
+
+2. Criteria for differentiation
+- by feedback
+- by time
+- by used methods
+
+- [How to choose]: Choosing a model is based on the organization and the nature of the application/project
+
+3. Waterfall
+- Process phases follow one after another and the order can't be changed
+- The client is hardly able to introduce any changes
+
+4. Rapid Application Development:
+- Short cycles
+- "Fast speed" adaptation to Waterfall
+- There are multiple teams, together with [code reuse], [component reuse] and merges between teams
+- Several teams work parallelly
+- Parallel modeling:  Business modeling, Data modelling, Process modelling
+- Construction
+- Integration
+
+- Shortcomings:
+  - Difficult when the project cannot be divided into modules
+  - Considerable human resource needed
+  - Difficult with new and cutting-edge technologies
+
+5. Incremental development:
+- The system is not delivered as a whole
+- It is delivered piece by piece, by merging components
+
+6. Iterative development:
+- The system is delivered from the beginning
+- The components are merged together and then they are being gradually improved
+
+7. Prototype models
+7.1. Evolutionary: It aims to deliver a system, starting from a prototype. It delivers a system.
+7.2. Throw-away:   It aims to make the requirements clearer, by throwing away some of the prototypes down the road. It delivers a prototype + specification
+
+8. Spiral model:
+- It combines waterfall and prototype model
+- It's iterative: Each cycle begins with risk analysis includes more and more sophisticated activities and finishes with a milestone
+- It has multiple [anchor point milestones]
+
+9. Formal transformation model:
+- Based on transforming the specification to system based on formal mathematical transformations

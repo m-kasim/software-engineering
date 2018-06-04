@@ -1,0 +1,133 @@
+Software Engineering
+https://www.youtube.com/watch?v=YQITApIOhhM
+
+1. Software Engineering processes:
+- Requirements
+- Design
+- Construction
+- Testing
+- Project Management
+
+2. Development methodologies:
+- Waterfall
+- Heavyweight methodologies
+- Agile methodologies, Scrum and XP
+
+3. Software engineering:
+- [Definition]:
+  Software engineering is the application of systematic, disciplined, quantifiable
+  approach to the development, operation and maintenance of software.
+
+4. Products and costs
+- Software costs
+- Generic and custom products
+
+5. Software product attributes (characteristics of good software)
+- Maintainability
+- Dependability and security
+- Efficiency
+- Acceptability
+
+6. Software system types:
+- Stand-alone applications
+- Interactive transaction based systems
+- Embedded control systems
+- Batch-processing systems
+- Entertainment systems
+- Systems for modeling and simulation
+- Data collection systems
+- Systems of systems
+
+7. Web-based software engineering
+- Presently, the dominant approach
+- Applications now run on the cloud
+- Should be developed and delivered incrementally
+- Browser constraints
+
+8. Software process:
+- [Definition]: A structured set of activities required to develop a software system
+
+- [Processes]:
+  - Specification:              process of developing a software specification.
+  - Design and implementation:  concerned with transforming a requirements specification into an executable software system.
+  - Validation:                 checking that the system conforms to its specification and that it meets the real needs of the users of the system.
+  - Evolution:                  takes place when you change existing software systems to meet new requirements. The software must evolve to remain useful.
+
+- [Types]:
+  1. Waterfall model
+  2. Incremental development. Some stages are interleaved, it can be both waterfall or agile
+  3. Re-use oriented software engineering: systems are created from existing components
+  3. Hybrid (most often in practice)
+
+9. Process breakdown:
+
+  1. [Requirements]
+  - Feasibility study
+  - Requirements elicication and analysis
+  - Requirements specification
+  - Requirements validation
+
+  2. [Design and implementation]
+       [Software design]
+       - Architectural design
+       - Interface design
+       - Component design
+       - Database design
+       - Implementation
+
+  3. [Validation]: Intends to show that the system conforms the specification and meets the requirements of the customer
+  - Component testing
+  - System testing
+  - Acceptance testing
+
+  4. [Evolution]
+  - As business changes, the requirements change as well
+  - Maintenance and development become interleaved
+
+9. SOA - Service Oriented Architecture:
+- Web services and web based applications
+- Definitions of web services
+- Service interface and implementation
+- They help integrate applications which were not meant to work together
+- Independent and interactive, achieving [loose coupling]
+
+  [Service-Oriented Computing]:
+  SOC is a new computing paradigm that utilizes services as the basic constructs to support the development of rapid,
+  low-cost composition of distributed applications
+
+- [service] is the non-matarial equivalent of a good
+- Presently, many entities provide [services] to each other
+
+- [Service oriented approach]:
+  Software services reflect a service-oriented approach to programming, based on the
+  idea of describing available computational resources as services that can be
+  delivered through a standard and well defines interface
+
+- Software as a service
+
+- [Web services]:
+  A web service is a platform independent, loosely coupled, self- contained, programmable web-enabled application that can be
+  described, published, discovered, coordinated, and configured using XML artifacts (open standards) for the purpose of developing distributed
+  interoperable applications.
+
+- [Service Oriented Architecture]:
+  - A logical approach to design a software system, which provides a service either by end-user applications or by services distributed
+    over a network via published interfaces
+  - Design services which can be easily called from various clients (stateful, stateless) in a logically decoupled way
+  - All functions in SOA are defined as services
+  - All services are autonomous
+  - Service leve abstractions
+  - Platform independent
+
+- [SOA operations]:
+  - publish: describe , register
+  - find   : discover , select
+  - bind   : invoke
+
+            [Service provider]
+          /                    \
+         /                      \
+      publish                   bind
+       /                          \
+      /                            \
+[Service registry] ---find----- [Service user]
